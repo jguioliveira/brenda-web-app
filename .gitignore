@@ -1,0 +1,30 @@
+﻿## Visual Studio / VS Code
+.vs/
+*.user
+*.suo
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+out/
+
+## .NET
+artifacts/
+
+## Node (React / Vite)
+node_modules/
+npm-debug.log*
+dist/
+.pnpm-store/
+
+## OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+## JetBrains
+.idea/
