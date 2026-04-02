@@ -1,0 +1,417 @@
+:root {
+    --primary: #f0a3ab;
+    --primary-dark: #c47d84;
+    --secondary: #2a2e31;
+    --text: #2a2e31;
+    --light-grey: #ededed;
+    --dark-grey: #14171c;
+    --white: #fff;
+}
+
+/*- Structure -*/
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+}
+
+.menu-open {
+    overflow: hidden;
+}
+
+/*- Commom Classes -*/
+.w-100 {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+.my-20 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.p-50 {
+    padding-top: 50px;
+}
+
+.py-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+h1 {
+    font-size: 4.375rem;
+}
+
+h2 {
+    font-size: 2.875rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h1, h2, h3, p {
+    margin-bottom: 30px;
+}
+
+section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/*- Colors -*/
+.text-white {
+    color: var(--white);
+}
+.bg-white {
+    background-color: var(--white);
+}
+
+.bg-light-grey {
+    background-color: var(--light-grey);
+}
+
+.bg-dark-grey {
+    background-color: var(--dark-grey);
+}
+
+/*- Buttons -*/
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    width: fit-content;
+    min-width: 155px;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    border:2px solid var(--dark-grey);
+    background-color: #fff;
+}
+
+.btn-secondary:hover {
+    color: var(--white);
+    background-color: var(--dark-grey);
+}
+
+.container-fluid.boxed {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/*- Page Sections -*/
+/* Header */
+header {
+    min-height: 80px;
+}
+
+header img {
+    width: auto;
+    height: 50px;
+}
+
+nav a {
+    position: relative;
+    font-size: .875rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 8px;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+nav a:hover {
+    color: var(--primary-dark);
+}
+
+nav a::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    margin: 0 auto;
+    height: 2px;
+    transition: all .3s ease;
+    right: 0;
+    left: 0;
+    bottom: -10px;
+    pointer-events: none;
+    background-color: var(--primary-dark);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+#mobile-menu nav a {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 25px;
+}
+
+#mobile-menu nav a::after {
+    bottom: -5px;
+}
+
+.menu-mobile-toggle {
+    width: 47px;
+    height: 34px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--dark-grey);
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.icon-bar {
+    background-color: var(--dark-grey);
+    transition: all .1s ease;
+    position: relative;
+    display: block;
+    width: 15px;
+    height: 2px;
+    transition: .8 ease;
+}
+
+.icon-bar:nth-child(2) {
+    margin: 3px 0;
+}
+
+.menu-open .icon-bar:nth-child(1) {
+  transform: rotate(45deg);
+  top: 5px;
+}
+
+.menu-open .icon-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-open .icon-bar:nth-child(3) {
+    transform: rotate(-45deg);
+    bottom: 5px;
+}
+
+/* Hero */
+#top {
+    background-image: url('../img/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 700px;
+}
+
+.top-wrapper {
+    max-width: 780px;
+    background: rgba(255,255,255, .5);
+    padding: 20px;
+}
+
+.top-buttons a {
+    margin: 0 4px;
+}
+
+/* About */
+#about img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 30px;
+}
+
+/* Services */
+article.service {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Cases */
+#cases a:hover img {
+    opacity: .8;
+}
+
+/* Team */
+#team img {
+    width: 80px;
+    height:80px;
+    border-radius: 100%;
+}
+
+#team h4 {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1.063rem;
+}
+
+/* Contact */
+.contact-wrapper {
+    max-width: 700px;
+}
+
+/* Footer */
+footer {
+    padding:20px 0;
+}
+
+/* Backdrop */
+#menu-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0, .5);
+    cursor: pointer;
+    z-index: 100;
+}
+
+.menu-open #menu-backdrop {
+    display: block;
+}
+
+.social-media-icons {
+    height: 34px;
+}
+
+/*- Responsive -*/
+@media only screen and (max-width: 768px) {
+    /*- Commom Classes -*/
+    h1 {
+        font-size: 2.438rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    /* Header */
+    header nav {
+        display: none;
+    }
+
+    header button {
+        display: block;
+    }
+
+    /* Mobile Menu */
+    .menu-open #mobile-menu {
+        transform: translateX(0);
+    }
+
+    #mobile-menu {
+        display: flex !important;
+        position: fixed;
+        width: 300px;
+        max-width: 300px;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 110;
+        background: var(--white);
+        transform: translateX(-300px);
+        transition: .5s ease;
+    }
+
+    /* Hero */
+    #top {
+        min-height: auto;
+    }
+
+    .top-wrapper {
+        padding: 24px 12px;
+    }
+
+    /* About */
+    .about-item {
+        margin-bottom: 60px;
+    }
+
+    /* Services */
+    .img-left img {
+        margin-bottom: 60px
+    }
+
+    .img-right img {
+        margin-top: 60px
+    }
+
+    /* Team */
+    #team h4 {
+        margin-bottom: 60px;
+    }
+
+    /* Contact */
+    .contact-wrapper {
+        padding: 0 12px;
+    }
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+    .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
