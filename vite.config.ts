@@ -8,7 +8,6 @@ export default defineConfig({
     strictPort: true,
   },
   build: {
-    outDir: "../wwwroot",
-    emptyOutDir: false,
+    outDir: "dist",
   },
 });
