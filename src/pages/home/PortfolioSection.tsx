@@ -1,7 +1,8 @@
 ﻿import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Glide from "@glidejs/glide";
 
-export function PortfolioSection() {
+export default function PortfolioSection() {
   useEffect(() => {
     const glide = new Glide(".glide", {
       type: "carousel",
@@ -20,7 +21,7 @@ export function PortfolioSection() {
   }, []);
 
   return (
-    <section id="portfolio" className="bg-light-grey">
+    <section id="portfolio" className="bg-white">
       <div className="container-fluid boxed">
         <div className="row">
           <div className="col">
@@ -29,19 +30,19 @@ export function PortfolioSection() {
               <div className="glide__track" data-glide-el="track">
                 <ul className="glide__slides">
                   <li className="glide__slide">
-                    <a href="#portfolio">
+                    <Link to="/portfolio">
                       <img src="/assets/img/card-01.jpg" alt="Portfolio item" className="w-100" />
-                    </a>
+                    </Link>
                   </li>
                   <li className="glide__slide">
-                    <a href="#portfolio">
+                    <Link to="/portfolio">
                       <img src="/assets/img/card-02.jpg" alt="Portfolio item" className="w-100" />
-                    </a>
+                    </Link>
                   </li>
                   <li className="glide__slide">
-                    <a href="#portfolio">
+                    <Link to="/portfolio">
                       <img src="/assets/img/card-03.jpg" alt="Portfolio item" className="w-100" />
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -49,7 +50,9 @@ export function PortfolioSection() {
           </div>
         </div>
         <div className="d-flex justify-content-center">
-          <a href="/portfolio" className="btn btn-primary mt-20">See More</a>
+          <Link to="/portfolio" className="btn btn-secondary mt-20">
+            See More
+          </Link>
         </div>
       </div>
     </section>

@@ -1,10 +1,9 @@
 ﻿import { Helmet } from "react-helmet-async";
-import { AboutSection } from "./home/AboutSection";
-import { ContactSection } from "./home/ContactSection";
-import { MakeupCourseSection } from "./home/MakeupCourseSection";
-import { PortfolioSection } from "./home/PortfolioSection";
-import { ReviewsSection } from "./home/ReviewsSection";
-import { ServicesSection } from "./home/ServicesSection";
+import { AboutSection } from "@/pages/home/AboutSection";
+import { ContactSection } from "@/pages/home/ContactSection";
+import PortfolioSection from "@/pages/home/PortfolioSection";
+import { ReviewsSection } from "@/pages/home/ReviewsSection";
+import { ServicesSection } from "@/pages/home/ServicesSection";
 
 export function HomePage() {
   return (
@@ -23,11 +22,10 @@ export function HomePage() {
         <meta name="robots" content="index, follow" />
       </Helmet>
       <ServicesSection />
-      <MakeupCourseSection />
       <PortfolioSection />
       <AboutSection />
-      <ContactSection />
       <ReviewsSection />
+      <ContactSection />
     </>
   );
 }

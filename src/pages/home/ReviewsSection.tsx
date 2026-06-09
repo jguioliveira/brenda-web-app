@@ -1,6 +1,6 @@
 ﻿export function ReviewsSection() {
   return (
-    <section id="reviews" style={{ backgroundColor: "#ead1dc" }}>
+    <section id="reviews" className="bg-light-grey">
       <div className="container-fluid boxed">
         <div className="row">
           <h2>Reviews</h2>
