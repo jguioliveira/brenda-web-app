@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en"><script src="blob:null/df2d81a3-dd09-4375-964a-14d891794fb0"></script><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <title>Brenda Artistry - Perfect Flow</title>
+    <style>
+        :root {
+            --perola: #FDFBF7;       
+            --ametista: #2A1F35;     
+            --lilas-base: #7C6C91;   
+            --taupe: #BFAFA6;        
+            --ouro-palido: #DBCBB0;  
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: var(--perola);
+            color: var(--ametista);
+        }
+
+        a { text-decoration: none; color: inherit; transition: opacity 0.2s; }
+        a:hover { opacity: 0.7; }
+        
+        /* HEADER */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 20px;
+            background-color: var(--perola);
+            border-bottom: 1px solid var(--ouro-palido);
+        }
+        .logo-title {
+            font-size: 28px;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-weight: normal;
+            margin: 0;
+        }
+        .logo-subtitle {
+            font-family: 'Arial', sans-serif;
+            font-size: 10px;
+            color: var(--lilas-base);
+            letter-spacing: 3px;
+            margin-top: 8px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+            gap: 25px;
+            font-family: 'Arial', sans-serif;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 25px;
+            align-items: center;
+        }
+        .nav-social {
+            text-transform: none;
+            letter-spacing: 1px;
+            color: var(--lilas-base);
+            font-weight: bold;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .hero-tag {
+            color: var(--taupe);
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            letter-spacing: 4px;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .hero h1 {
+            font-size: 52px;
+            margin: 0 0 30px 0;
+            line-height: 1.2;
+            font-weight: normal;
+        }
+        .hero h1 span {
+            font-style: italic;
+            color: var(--lilas-base);
+        }
+        .hero p {
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            opacity: 0.8;
+            max-width: 650px;
+            margin: 0 auto 50px auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .btn-bridal {
+            background-color: var(--ametista);
+            color: var(--perola);
+            font-family: 'Arial', sans-serif;
+            padding: 18px 40px;
+            font-weight: bold;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid var(--ouro-palido);
+            cursor: pointer;
+        }
+        .btn-curls {
+            background-color: transparent;
+            color: var(--ametista);
+            font-family: 'Arial', sans-serif;
+            padding: 18px 40px;
+            font-weight: bold;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid var(--lilas-base);
+            cursor: pointer;
+        }
+
+        /* SECTIONS GENERAL */
+        .section-padding {
+            padding: 100px 40px;
+            max-width: 1100px;
+            margin: 0 auto;
+            border-top: 1px solid #F0EAE1;
+        }
+        .bridal-container {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        .content-box { flex: 1; }
+        .image-box {
+            flex: 0.9;
+            padding: 15px;
+            border: 1px solid var(--ouro-palido);
+        }
+        .placeholder {
+            background-color: var(--taupe);
+            height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-style: italic;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+            color: var(--ametista);
+        }
+
+        .curls-bg {
+            background-color: #F5F1EA;
+            border-top: 1px solid var(--ouro-palido);
+            border-bottom: 1px solid var(--ouro-palido);
+        }
+
+        /* INSTAGRAM CALLOUT BAR */
+        .instagram-callout {
+            background-color: var(--ametista);
+            color: var(--perola);
+            text-align: center;
+            padding: 40px 20px;
+            font-family: 'Arial', sans-serif;
+        }
+        .instagram-callout p {
+            margin: 0 0 15px 0;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.9;
+        }
+        .instagram-callout a {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 24px;
+            color: var(--ouro-palido);
+            font-style: italic;
+        }
+
+        /* ABOUT ME SECTION */
+        .about-section {
+            background-color: var(--perola);
+        }
+        .about-text p {
+            font-family: 'Arial', sans-serif;
+            font-size: 15px;
+            line-height: 1.8;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        .future-badge {
+            display: inline-block;
+            background-color: #ECE7DF;
+            padding: 10px 15px;
+            font-family: 'Arial', sans-serif;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--lilas-base);
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* TESTIMONIALS */
+        .testimonials-section {
+            padding: 100px 40px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .testimonials-grid {
+            display: flex;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        .testimonial-card {
+            flex: 1;
+            background-color: var(--perola);
+            padding: 40px 30px;
+            border: 1px solid var(--ouro-palido);
+        }
+        .quote-icon {
+            font-size: 40px;
+            color: var(--lilas-base);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        .testimonial-text {
+            font-family: 'Arial', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            font-style: italic;
+            opacity: 0.85;
+            margin-bottom: 20px;
+        }
+        .testimonial-author {
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .testimonial-sub {
+            font-family: 'Arial', sans-serif;
+            font-size: 11px;
+            color: var(--taupe);
+            margin-top: 2px;
+        }
+
+        /* FORM */
+        .contact-section {
+            padding: 100px 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+            border-top: 1px solid #F0EAE1;
+        }
+        form {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+            font-family: 'Arial', sans-serif;
+        }
+        label { font-size: 12px; text-transform: uppercase; color: var(--lilas-base); font-weight: bold; }
+        input, select, textarea { padding: 12px; border: 1px solid var(--ouro-palido); background-color: var(--perola); }
+        button { background-color: var(--ametista); color: var(--perola); border: none; padding: 18px; font-size: 12px; text-transform: uppercase; font-weight: bold; cursor: pointer; }
+        .form-disclaimer { font-family: 'Arial', sans-serif; font-size: 11px; opacity: 0.6; line-height: 1.5; margin-top: 15px; text-align: center; }
+
+        footer { text-align: center; padding: 40px; font-family: 'Arial', sans-serif; font-size: 11px; color: var(--taupe); border-top: 1px solid #F0EAE1; }
+    </style>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <header>
+        <div class="logo-title">BRENDA</div>
+        <div class="logo-subtitle">Premium Hair &amp; Makeup Artistry</div>
+        <nav>
+            <a href="#">The Atelier</a>
+            <a href="#bridal">Bridal</a>
+            <a href="#curls">The Curl Clinic</a>
+            <a href="#events">Special Events</a>
+            <a href="#about">Behind the Artistry</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#contact">Contact</a>
+            <a href="https://instagram.com/SUA_CONTA" target="_blank" class="nav-social">@brenda.artistry</a>
+            <a href="#" style="color: var(--taupe); margin-left: 10px;">EN | PT</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <span class="hero-tag">Gold Coast &amp; Brisbane • Customised Mobile Artistry</span>
+        <h1>Your natural beauty, <span>elevated</span>.</h1>
+        <p>Providing customised mobile hair and makeup across Gold Coast
+ and Brisbane. Dedicated to refined, soft-glam, long-lasting makeup and 
+hair styling that brings out your confidence without changing who you 
+are. Because true elegance is about looking like yourself, at your very 
+best.</p>
+        
+        <div class="hero-buttons">
+            <a href="#contact" class="btn-bridal">Enquire Now</a>
+        </div>
+    </section>
+
+    <!-- 1. BRIDAL SECTION -->
+    <section id="bridal" class="section-padding">
+        <div class="bridal-container">
+            <div class="content-box">
+                <span class="hero-tag">The Bridal Journey</span>
+                <h2 style="font-size: 38px; font-weight: normal; margin: 0 0 20px 0;">Signature Weddings</h2>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8;">Your
+ wedding day should feel calm, grounded, and entirely yours. I provide a
+ fully mobile service across Gold Coast and Brisbane, bringing a serene 
+beauty experience directly to your venue or hotel so you can prepare in 
+absolute comfort. Bridal trials and consultations are tailored and 
+scheduled individually to ensure your vision is perfectly captured 
+before the big day.</p>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8; font-weight: bold; color: var(--lilas-base);">An Integrative Review:</p>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8; margin-top: -10px;">Months
+ before the wedding, we look at the bigger picture—your skin and hair 
+type, daily habits, hydration, and skincare routine. Understanding how 
+your skin and hair behave is what allows us to create a flawless, 
+intentional canvas.</p>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8; font-weight: bold; color: var(--lilas-base);">High-Performance Longevity:</p>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8; margin-top: -10px;">Using
+ curated, premium products meticulously selected to feel weightless on 
+your skin, photograph beautifully in high-definition, and remain fresh 
+and resilient.</p>
+                <a href="#contact" class="btn-bridal" style="display:inline-block; margin-top: 20px; padding: 14px 30px;">Check Availability</a>
+            </div>
+            <div class="image-box">
+                <div class="placeholder">[ Classic Bridal Image Here ]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. CURL CLINIC SECTION -->
+    <section id="curls" class="section-padding curls-bg">
+        <div class="bridal-container" style="flex-direction: row-reverse;">
+            <div class="content-box">
+                <span class="hero-tag">Signature Care</span>
+                <h2 style="font-size: 38px; font-weight: normal; margin: 0 0 20px 0;">The Curl Clinic</h2>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8;">A
+ specialised space dedicated to the beauty of natural textures. Every 
+curl pattern is unique, and my approach completely respects that 
+individuality by offering customised care instead of generic formulas.</p>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8; font-weight: bold; color: var(--lilas-base);">Bespoke Dry Cutting:</p>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8; margin-top: -10px;">Haircut
+ performed on dry hair to understand how your curls naturally fall. We 
+begin with a structural curvature analysis, looking at your hair’s 
+health, face shape, and multiple textures to design a cut that works for
+ you.</p>
+                <p style="font-family: 'Arial', sans-serif; font-size: 13px; line-height: 1.6; color: var(--ametista); font-style: italic; background-color: rgba(219, 203, 176, 0.3); padding: 10px 15px; border-left: 2px solid var(--lilas-base);">Note
+ for your session: Please arrive with your curls completely dry, clean, 
+and in their natural state (free of heavy products, braids, or clips) so
+ I can evaluate your natural pattern accurately.</p>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8; font-weight: bold; color: var(--lilas-base); margin-top: 20px;">Lifestyle &amp; Homecare Guidance:</p>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8; margin-top: -10px;">We
+ look closely at your daily routine, habits, and current products to 
+co-create a practical, personalised styling and hydration ritual that 
+you can easily maintain at home.</p>
+                <a href="#contact" class="btn-curls" style="display:inline-block; margin-top: 20px; padding: 14px 30px; background-color: var(--ametista); color: var(--perola);">Book Your Curl Session</a>
+            </div>
+            <div class="image-box" style="background-color: var(--perola);">
+                <div class="placeholder">[ Powerful Natural Textures Image Here ]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SPECIAL EVENTS SECTION -->
+    <section id="events" class="section-padding">
+        <div class="bridal-container">
+            <div class="content-box">
+                <span class="hero-tag">Radiant and Unique</span>
+                <h2 style="font-size: 38px; font-weight: normal; margin: 0 0 20px 0;">Special Events &amp; Formals</h2>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8;">Whether
+ you are attending a gala, a school formal, a milestone celebration, or 
+being a wedding guest, your look should feel elevated, radiant, and 
+entirely like yourself.</p>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8; font-weight: bold; color: var(--lilas-base);">Refined Artistry:</p>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8; margin-top: -10px;">Sophisticated
+ hair and beautiful soft-glam makeup designed to enhance your best 
+features. Every look is closely styled to complement your outfit and the
+ unique atmosphere of the event.</p>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8; font-weight: bold; color: var(--lilas-base);">Mobile Comfort &amp; Premium Selection:</p>
+                <p style="font-family: 'Arial', sans-serif; line-height: 1.8; opacity: 0.8; margin-top: -10px;">A
+ fully mobile service across Gold Coast and Brisbane, bringing the 
+preparation directly to your location. I work with a curated selection 
+of premium products chosen for their breathable texture on the skin and 
+beautiful, natural finish on camera.</p>
+                <a href="#contact" class="btn-curls" style="display:inline-block; margin-top: 20px; padding: 14px 30px;">Secure Your Date</a>
+            </div>
+            <div class="image-box">
+                <div class="placeholder">[ Special Event / Red Carpet Look Image Here ]</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ABOUT ME SECTION -->
+    <section id="about" class="section-padding about-section">
+        <div class="bridal-container">
+            <div class="image-box" style="border: 1px solid var(--lilas-base);">
+                <div class="placeholder" style="background-color: #EFECE6;">
+                    [ Professional Profile Portrait: Elegant, warm and welcoming ]
+                </div>
+            </div>
+            <div class="content-box about-text" style="padding-left: 20px;">
+                <span class="hero-tag">The Artist</span>
+                <h2 style="font-size: 38px; font-weight: normal; margin: 0 0 25px 0;">Behind the Artistry</h2>
+                <p>Welcome. I am Brenda, the artist and creator behind 
+this mobile beauty space. My work is guided by a simple philosophy: true
+ elegance is not about changing who you are, but rather enhancing the 
+beautiful features you already possess.</p>
+                <p>With an international background and continuous 
+specialised training in both refined makeup, hairstyles and advanced 
+curl styling, I choose to look at beauty through an individual lens. I 
+do not believe in one-size-fits-all formulas. Whether I am mapping out a
+ custom dry cut for your specific curl pattern or reviewing your 
+personal routine before your wedding day, every detail of my service is 
+thoughtfully tailored to you.</p>
+                <p>For me, the essence of my work is rooted in care. It 
+is found in the breathable texture of the products I select, the calm 
+environment I bring to your location, and the genuine connection we 
+build. My goal is for you to look in the mirror and see a beautiful, 
+confident version of yourself, one that feels entirely authentic.</p>
+                <p>Driven by this passion for empowering women to 
+understand their own beauty, I am currently preparing exclusive 
+masterclasses in self-makeup and curl styling, designed to share these 
+practical techniques with you soon.</p>
+                
+                <div class="future-badge">✨ Coming Soon: Exclusive Self-Makeup &amp; Curl Masterclasses</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM CALLOUT BAR -->
+    <section class="instagram-callout">
+        <p>Explore my visual portfolio &amp; behind-the-scenes</p>
+        <a href="https://instagram.com/SUA_CONTA" target="_blank">@brenda.artistry</a>
+    </section>
+
+    <!-- 5. TESTIMONIALS SECTION -->
+    <section id="testimonials" class="testimonials-section">
+        <span class="hero-tag">Words from our Clients</span>
+        <h2 style="font-size: 38px; font-weight: normal; margin: 0;">Kind Words &amp; Reviews</h2>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="quote-icon">“</div>
+                <p class="testimonial-text">"An absolute dream to work 
+with! She did my bridal makeup and it lasted through tears, humidity, 
+and dancing. Her holistic approach made my skin look flawless. Highly 
+recommend her mobile service in Gold Coast!"</p>
+                <div class="testimonial-author">Sarah Jenkins</div>
+                <div class="testimonial-sub">Bridal Client • Gold Coast</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon">“</div>
+                <p class="testimonial-text">"Finalmente encontrei alguém
+ na Austrália que entende de cachos! O corte a seco mudou a vida do meu 
+cabelo. Ela analisa nossa rotina e dá dicas reais de homecare. 
+Perfeita!"</p>
+                <div class="testimonial-author">Mariana Silva</div>
+                <div class="testimonial-sub">The Curl Clinic • Brisbane</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CONTACT FORM -->
+    <section id="contact" class="contact-section">
+        <span class="hero-tag">Atelier Booking</span>
+        <h2 style="font-size: 36px; font-weight: normal; margin: 0;">Contact &amp; Enquiries</h2>
+        <p style="font-family: 'Arial', sans-serif; font-size: 14px; opacity: 0.7; margin-top: 15px;">Every
+ detail of your mobile bespoke experience is thoughtfully mapped out 
+from the very first contact. To check availability for your wedding day,
+ personal curl styling session, or upcoming special event, please fill 
+out the form details below.</p>
+        <form>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required="">
+
+            <label for="contact">Preferred Contact (WhatsApp or Email)</label>
+            <input type="text" id="contact" required="">
+
+            <label for="service">Service Required</label>
+            <select id="service">
+                <option selected="selected">Bridal Package (Noivas)</option>
+                <option>The Curl Clinic (Corte &amp; Cuidado)</option>
+                <option>Special Event / Formal</option>
+            </select>
+
+            <label for="date">Event Date &amp; Location</label>
+            <input type="text" id="date" required="">
+
+            <label for="message">Share your dream look or hair goals</label>
+            <textarea id="message" rows="4"></textarea>
+
+            <button type="submit">Send Message</button>
+            
+            <p class="form-disclaimer">Please note: As a fully mobile 
+service, travel fees or minimum booking requirements may apply depending
+ on your location across Gold Coast and Brisbane.</p>
+        </form>
+    </section>
+
+    <footer>
+        © 2026 Brenda Artistry. All rights reserved. Premium Mobile Service in Queensland, Australia.
+    </footer>
+
+
+</body></html>
