@@ -1,35 +1,47 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ContactLinks } from "@/components/ContactLinks";
+import { LanguageBanner } from "@/components/LanguageBanner";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useActiveSection } from "@/hooks/useActiveSection";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-function SectionNavLinks({ onNavigate }: { onNavigate?: () => void }) {
-  const { t } = useLanguage();
+type NavLink = {
+  href: string;
+  label: string;
+  sectionId: string | null;
+};
+
+function SectionNavLinks({
+  links,
+  activeSection,
+  atTop,
+  onNavigate,
+}: {
+  links: NavLink[];
+  activeSection: string | null;
+  atTop: boolean;
+  onNavigate?: () => void;
+}) {
   const handleClick = () => onNavigate?.();
 
   return (
     <>
-      <a href="#top" onClick={handleClick}>
-        {t.header.nav.atelier}
-      </a>
-      <a href="#bridal" onClick={handleClick}>
-        {t.header.nav.bridal}
-      </a>
-      <a href="#curls" onClick={handleClick}>
-        {t.header.nav.curls}
-      </a>
-      <a href="#events" onClick={handleClick}>
-        {t.header.nav.events}
-      </a>
-      <a href="#about" onClick={handleClick}>
-        {t.header.nav.about}
-      </a>
-      <a href="#testimonials" onClick={handleClick}>
-        {t.header.nav.reviews}
-      </a>
-      <a href="#contact" onClick={handleClick}>
-        {t.header.nav.contact}
-      </a>
+      {links.map(({ href, label, sectionId }) => {
+        const isActive =
+          sectionId === null ? atTop && activeSection === null : activeSection === sectionId;
+
+        return (
+          <a
+            key={href}
+            href={href}
+            className={isActive ? "is-active" : undefined}
+            aria-current={isActive ? "page" : undefined}
+            onClick={handleClick}
+          >
+            {label}
+          </a>
+        );
+      })}
     </>
   );
 }
@@ -37,18 +49,78 @@ function SectionNavLinks({ onNavigate }: { onNavigate?: () => void }) {
 export function SiteHeader() {
   const { t } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [compact, setCompact] = useState(false);
+  const [atTop, setAtTop] = useState(true);
+  const activeSection = useActiveSection();
+  const mobileMenuRef = useRef<HTMLElement>(null);
+
+  const navLinks: NavLink[] = [
+    { href: "#top", label: t.header.nav.atelier, sectionId: null },
+    { href: "#bridal", label: t.header.nav.bridal, sectionId: "bridal" },
+    { href: "#curls", label: t.header.nav.curls, sectionId: "curls" },
+    { href: "#events", label: t.header.nav.events, sectionId: "events" },
+    { href: "#about", label: t.header.nav.about, sectionId: "about" },
+    { href: "#testimonials", label: t.header.nav.reviews, sectionId: "testimonials" },
+    { href: "#contact", label: t.header.nav.contact, sectionId: "contact" },
+  ];
 
   useEffect(() => {
     document.body.classList.toggle("menu-open", menuOpen);
     return () => document.body.classList.remove("menu-open");
   }, [menuOpen]);
 
+  useEffect(() => {
+    const onScroll = () => {
+      setCompact(window.scrollY > 48);
+      setAtTop(window.scrollY < 80);
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const menu = mobileMenuRef.current;
+    if (!menu) return;
+
+    const focusable = menu.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), textarea, input, select',
+    );
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    first?.focus();
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Tab") return;
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    return () => document.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
+
   const closeMenu = () => setMenuOpen(false);
   const toggleMenu = () => setMenuOpen((open) => !open);
 
+  const headerClassName = ["site-header", compact ? "is-compact" : "", menuOpen ? "menu-open-header" : ""]
+    .filter(Boolean)
+    .join(" ");
+
   return (
     <>
-      <header className="site-header" id="top">
+      <LanguageBanner />
+
+      <header className={headerClassName} id="top">
         <div className="header-bar">
           <button
             type="button"
@@ -65,21 +137,33 @@ export function SiteHeader() {
             </span>
           </button>
 
-          <div className="header-brand">
+          <a href="#top" className="header-brand" onClick={closeMenu}>
             <div className="logo-title">{t.header.logo}</div>
             <div className="logo-subtitle">{t.header.subtitle}</div>
-          </div>
+          </a>
 
-          <div className="header-bar-spacer" aria-hidden="true" />
+          <div className="header-bar-end">
+            <LanguageSwitcher className="header-lang-mobile" />
+            <div className="header-bar-spacer" aria-hidden="true" />
+          </div>
         </div>
 
         <nav className="site-nav desktop-nav" aria-label="Main">
-          <SectionNavLinks />
-          <LanguageSwitcher />
+          <SectionNavLinks
+            links={navLinks}
+            activeSection={activeSection}
+            atTop={atTop}
+          />
+          <LanguageSwitcher className="header-lang-desktop" />
         </nav>
       </header>
 
-      <aside id="mobile-menu" className="mobile-menu" aria-hidden={!menuOpen}>
+      <aside
+        id="mobile-menu"
+        ref={mobileMenuRef}
+        className="mobile-menu"
+        aria-hidden={!menuOpen}
+      >
         <div className="mobile-menu-inner">
           <button
             type="button"
@@ -95,7 +179,12 @@ export function SiteHeader() {
           </button>
 
           <nav className="mobile-nav" aria-label="Mobile">
-            <SectionNavLinks onNavigate={closeMenu} />
+            <SectionNavLinks
+              links={navLinks}
+              activeSection={activeSection}
+              atTop={atTop}
+              onNavigate={closeMenu}
+            />
           </nav>
 
           <LanguageSwitcher />

@@ -5,6 +5,12 @@ export const en: Translations = {
     title: "Brenda Artistry — Premium Hair & Makeup",
     description:
       "Customised mobile hair and makeup across Gold Coast and Brisbane. Bridal, curl clinic, and special events.",
+    ogImageAlt: "Brenda Artistry — premium mobile hair and makeup",
+  },
+  langBanner: {
+    message: "Would you like to view this site in {language}?",
+    switch: "Switch to {language}",
+    dismiss: "No thanks",
   },
   header: {
     logo: "Brenda",
@@ -25,6 +31,7 @@ export const en: Translations = {
     titleAccent: "elevated",
     body: "Providing customised mobile hair and makeup across Gold Coast and Brisbane. Dedicated to refined, soft-glam, long-lasting makeup and hair styling that brings out your confidence without changing who you are. Because true elegance is about looking like yourself, at your very best.",
     cta: "Enquire Now",
+    imageAlt: "Soft glam bridal hair and makeup by Brenda Artistry",
   },
   bridal: {
     tag: "The Bridal Journey",
@@ -79,12 +86,26 @@ export const en: Translations = {
     badge: "✨ Coming Soon: Exclusive Self-Makeup & Curl Masterclasses",
     imageAlt: "Brenda Mello, makeup and hair artist",
   },
+  portfolio: {
+    tag: "Portfolio",
+    title: "Recent Work",
+    intro: "A glimpse of bridal, curl, and event artistry across Gold Coast and Brisbane.",
+    viewMore: "View more on Instagram",
+    imageAlts: {
+      bridal: "Bridal hair and makeup artistry",
+      curls: "Natural curl styling and cut",
+      events: "Special event hair and makeup",
+    },
+  },
   instagramCallout: {
     line: "Explore my visual portfolio & behind-the-scenes",
+    cta: "Follow on Instagram",
   },
   testimonials: {
     tag: "Words from our Clients",
     title: "Kind Words & Reviews",
+    ratingLabel: "5 out of 5 stars",
+    reviewsLink: "Read more reviews on Google",
     items: [
       {
         quote:
@@ -104,7 +125,14 @@ export const en: Translations = {
     tag: "Atelier Booking",
     title: "Contact & Enquiries",
     intro:
-      "Every detail of your mobile bespoke experience is thoughtfully mapped out from the very first contact. To check availability for your wedding day, personal curl styling session, or upcoming special event, please fill out the form details below.",
+      "Every detail of your mobile bespoke experience is thoughtfully mapped out from the very first contact. To check availability for your wedding day, personal curl styling session, or upcoming special event, please fill out the form below.",
+    stepsTitle: "What happens next",
+    steps: [
+      "Send your enquiry with your date, location, and service.",
+      "I'll reply within 1–2 business days with availability and next steps.",
+      "We'll confirm details, travel requirements, and booking if it's a fit.",
+    ],
+    directTitle: "Prefer to reach out directly?",
     disclaimer:
       "Please note: As a fully mobile service, travel fees or minimum booking requirements may apply depending on your location across Gold Coast and Brisbane.",
   },
@@ -112,9 +140,13 @@ export const en: Translations = {
     name: "Full Name",
     contact: "Preferred Contact (WhatsApp or Email)",
     service: "Service Required",
-    date: "Event Date & Location",
+    eventDate: "Event Date",
+    eventLocation: "Event Location",
+    eventDatePlaceholder: "e.g. 14 March 2026",
+    eventLocationPlaceholder: "e.g. Gold Coast, venue or suburb",
     message: "Share your dream look or hair goals",
     submit: "Send Message",
+    submitting: "Sending…",
     services: {
       bridal: "Bridal Package",
       curls: "The Curl Clinic (Cut & Care)",
@@ -123,9 +155,11 @@ export const en: Translations = {
     errors: {
       name: "Full name is required.",
       contact: "Preferred contact is required.",
-      date: "Event date and location is required.",
+      eventDate: "Event date is required.",
+      eventLocation: "Event location is required.",
     },
-    success: "Thank you — your message has been received. I'll be in touch soon.",
+    success: "Thank you — your message has been received. I'll be in touch within 1–2 business days.",
+    error: "Something went wrong sending your message. Please try again or contact me directly below.",
   },
   footer: {
     copyright: "© {year} Brenda Artistry. All rights reserved. Premium Mobile Service in Queensland, Australia.",

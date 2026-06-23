@@ -1,11 +1,15 @@
 import { languages, useLanguage } from "@/i18n/LanguageContext";
 import type { Language } from "@/i18n/types";
 
-export function LanguageSwitcher() {
+type Props = {
+  className?: string;
+};
+
+export function LanguageSwitcher({ className }: Props) {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <span className="lang-switcher" aria-label="Language">
+    <span className={["lang-switcher", className].filter(Boolean).join(" ")} aria-label="Language">
       {languages.map((item, index) => (
         <span key={item.code}>
           {index > 0 ? " | " : null}

@@ -5,6 +5,12 @@ export const es: Translations = {
     title: "Brenda Artistry — Hair & Makeup Premium",
     description:
       "Hair y makeup móvil personalizado en Gold Coast y Brisbane. Bodas, clínica de rizos y eventos especiales.",
+    ogImageAlt: "Brenda Artistry — hair y makeup móvil premium",
+  },
+  langBanner: {
+    message: "¿Te gustaría ver este sitio en {language}?",
+    switch: "Cambiar a {language}",
+    dismiss: "No, gracias",
   },
   header: {
     logo: "Brenda",
@@ -25,6 +31,7 @@ export const es: Translations = {
     titleAccent: "elevada",
     body: "Ofrezco hair y makeup móvil personalizado en Gold Coast y Brisbane. Dedicada a un look soft-glam refinado y duradero que realza tu confianza sin cambiar quién eres. Porque la verdadera elegancia es verte como tú misma, en tu mejor versión.",
     cta: "Consultar Ahora",
+    imageAlt: "Hair y makeup soft-glam nupcial por Brenda Artistry",
   },
   bridal: {
     tag: "El Camino Nupcial",
@@ -79,12 +86,26 @@ export const es: Translations = {
     badge: "✨ Próximamente: Masterclasses Exclusivas de Automakeup & Rizos",
     imageAlt: "Brenda Mello, artista de makeup y hair",
   },
+  portfolio: {
+    tag: "Portafolio",
+    title: "Trabajos Recientes",
+    intro: "Una muestra de artistry nupcial, rizos y eventos en Gold Coast y Brisbane.",
+    viewMore: "Ver más en Instagram",
+    imageAlts: {
+      bridal: "Hair y makeup nupcial",
+      curls: "Styling y corte de rizos naturales",
+      events: "Hair y makeup para evento especial",
+    },
+  },
   instagramCallout: {
     line: "Explora mi portafolio visual y detrás de cámaras",
+    cta: "Seguir en Instagram",
   },
   testimonials: {
     tag: "Palabras de Nuestras Clientes",
     title: "Palabras Amables & Reseñas",
+    ratingLabel: "5 de 5 estrellas",
+    reviewsLink: "Leer más reseñas en Google",
     items: [
       {
         quote:
@@ -105,6 +126,13 @@ export const es: Translations = {
     title: "Contacto & Consultas",
     intro:
       "Cada detalle de tu experiencia móvil a medida se planifica cuidadosamente desde el primer contacto. Para consultar disponibilidad para tu boda, sesión de rizos o evento especial, completa el formulario a continuación.",
+    stepsTitle: "Qué sucede a continuación",
+    steps: [
+      "Envía tu consulta con fecha, ubicación y servicio deseado.",
+      "Responderé en 1–2 días hábiles con disponibilidad y próximos pasos.",
+      "Confirmaremos detalles, desplazamiento y reserva si encaja.",
+    ],
+    directTitle: "¿Prefieres contactarme directamente?",
     disclaimer:
       "Nota: al ser un servicio totalmente móvil, pueden aplicar tarifas de desplazamiento o requisitos mínimos de reserva según tu ubicación en Gold Coast y Brisbane.",
   },
@@ -112,9 +140,13 @@ export const es: Translations = {
     name: "Nombre Completo",
     contact: "Contacto Preferido (WhatsApp o Email)",
     service: "Servicio Requerido",
-    date: "Fecha del Evento & Ubicación",
+    eventDate: "Fecha del Evento",
+    eventLocation: "Ubicación del Evento",
+    eventDatePlaceholder: "ej.: 14 de marzo de 2026",
+    eventLocationPlaceholder: "ej.: Gold Coast, venue o barrio",
     message: "Comparte tu look soñado u objetivos para el cabello",
     submit: "Enviar Mensaje",
+    submitting: "Enviando…",
     services: {
       bridal: "Paquete Nupcial",
       curls: "Clínica de Rizos (Corte & Cuidado)",
@@ -123,9 +155,11 @@ export const es: Translations = {
     errors: {
       name: "El nombre completo es obligatorio.",
       contact: "El contacto preferido es obligatorio.",
-      date: "La fecha y ubicación del evento son obligatorias.",
+      eventDate: "La fecha del evento es obligatoria.",
+      eventLocation: "La ubicación del evento es obligatoria.",
     },
-    success: "Gracias — recibí tu mensaje y me pondré en contacto pronto.",
+    success: "Gracias — recibí tu mensaje y me pondré en contacto en 1–2 días hábiles.",
+    error: "Algo salió mal al enviar. Inténtalo de nuevo o contáctame directamente abajo.",
   },
   footer: {
     copyright: "© {year} Brenda Artistry. Todos los derechos reservados. Servicio Móvil Premium en Queensland, Australia.",

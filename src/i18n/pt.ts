@@ -5,6 +5,12 @@ export const pt: Translations = {
     title: "Brenda Artistry — Hair & Makeup Premium",
     description:
       "Hair e makeup mobile personalizados na Gold Coast e Brisbane. Noivas, clínica de cachos e eventos especiais.",
+    ogImageAlt: "Brenda Artistry — hair e makeup mobile premium",
+  },
+  langBanner: {
+    message: "Gostaria de ver este site em {language}?",
+    switch: "Mudar para {language}",
+    dismiss: "Não, obrigada",
   },
   header: {
     logo: "Brenda",
@@ -25,6 +31,7 @@ export const pt: Translations = {
     titleAccent: "elevada",
     body: "Ofereço hair e makeup mobile personalizados na Gold Coast e Brisbane. Dedicada a um visual soft-glam refinado e duradouro que realça sua confiança sem mudar quem você é. Porque a verdadeira elegância é parecer você mesma, no seu melhor.",
     cta: "Solicitar Informações",
+    imageAlt: "Hair e makeup soft-glam nupcial por Brenda Artistry",
   },
   bridal: {
     tag: "A Jornada da Noiva",
@@ -79,12 +86,26 @@ export const pt: Translations = {
     badge: "✨ Em Breve: Masterclasses Exclusivas de Automakeup & Cachos",
     imageAlt: "Brenda Mello, artista de makeup e hair",
   },
+  portfolio: {
+    tag: "Portfólio",
+    title: "Trabalhos Recentes",
+    intro: "Um vislumbre de artistry nupcial, cachos e eventos na Gold Coast e Brisbane.",
+    viewMore: "Ver mais no Instagram",
+    imageAlts: {
+      bridal: "Hair e makeup nupcial",
+      curls: "Styling e corte de cachos naturais",
+      events: "Hair e makeup para evento especial",
+    },
+  },
   instagramCallout: {
     line: "Explore meu portfólio visual & bastidores",
+    cta: "Seguir no Instagram",
   },
   testimonials: {
     tag: "Palavras das Clientes",
     title: "Depoimentos & Reviews",
+    ratingLabel: "5 de 5 estrelas",
+    reviewsLink: "Ler mais avaliações no Google",
     items: [
       {
         quote:
@@ -105,6 +126,13 @@ export const pt: Translations = {
     title: "Contato & Consultas",
     intro:
       "Cada detalhe da sua experiência mobile sob medida é cuidadosamente planejado desde o primeiro contato. Para verificar disponibilidade para seu casamento, sessão de cachos ou evento especial, preencha o formulário abaixo.",
+    stepsTitle: "O que acontece a seguir",
+    steps: [
+      "Envie sua consulta com data, local e serviço desejado.",
+      "Responderei em 1–2 dias úteis com disponibilidade e próximos passos.",
+      "Confirmaremos detalhes, deslocamento e reserva se for adequado.",
+    ],
+    directTitle: "Prefere falar diretamente?",
     disclaimer:
       "Observação: por ser um serviço totalmente mobile, taxas de deslocamento ou requisitos mínimos de reserva podem aplicar conforme sua localização na Gold Coast e Brisbane.",
   },
@@ -112,9 +140,13 @@ export const pt: Translations = {
     name: "Nome Completo",
     contact: "Contato Preferido (WhatsApp ou Email)",
     service: "Serviço Desejado",
-    date: "Data do Evento & Local",
+    eventDate: "Data do Evento",
+    eventLocation: "Local do Evento",
+    eventDatePlaceholder: "ex.: 14 de março de 2026",
+    eventLocationPlaceholder: "ex.: Gold Coast, venue ou bairro",
     message: "Compartilhe o look dos sonhos ou objetivos para o cabelo",
     submit: "Enviar Mensagem",
+    submitting: "Enviando…",
     services: {
       bridal: "Pacote Noiva",
       curls: "Clínica de Cachos (Corte & Cuidado)",
@@ -123,9 +155,11 @@ export const pt: Translations = {
     errors: {
       name: "Nome completo é obrigatório.",
       contact: "Contato preferido é obrigatório.",
-      date: "Data e local do evento são obrigatórios.",
+      eventDate: "A data do evento é obrigatória.",
+      eventLocation: "O local do evento é obrigatório.",
     },
-    success: "Obrigada — recebi sua mensagem e entrarei em contato em breve.",
+    success: "Obrigada — recebi sua mensagem e entrarei em contato em 1–2 dias úteis.",
+    error: "Algo deu errado ao enviar. Tente novamente ou entre em contato diretamente abaixo.",
   },
   footer: {
     copyright: "© {year} Brenda Artistry. Todos os direitos reservados. Serviço Mobile Premium em Queensland, Austrália.",

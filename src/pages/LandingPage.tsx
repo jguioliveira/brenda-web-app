@@ -2,35 +2,53 @@ import { Helmet } from "react-helmet-async";
 import { ContactLinks } from "@/components/ContactLinks";
 import { InquiryForm } from "@/components/InquiryForm";
 import { SiteHeader } from "@/components/SiteHeader";
-import { SITE } from "@/data/site";
+import { contactHref, SITE } from "@/data/site";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export function LandingPage() {
   const { t } = useLanguage();
   const year = new Date().getFullYear();
   const copyright = t.footer.copyright.replace("{year}", String(year));
+  const ogImage = `${SITE.siteUrl}${SITE.heroImage}`;
 
   return (
     <>
       <Helmet>
         <title>{t.meta.title}</title>
         <meta name="description" content={t.meta.description} />
+        <meta property="og:title" content={t.meta.title} />
+        <meta property="og:description" content={t.meta.description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={SITE.siteUrl} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:alt" content={t.meta.ogImageAlt} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t.meta.title} />
+        <meta name="twitter:description" content={t.meta.description} />
+        <meta name="twitter:image" content={ogImage} />
       </Helmet>
 
       <SiteHeader />
 
       <main>
         <section className="hero">
-          <span className="hero-tag">{t.hero.tag}</span>
-          <h1>
-            {t.hero.title}
-            <span>{t.hero.titleAccent}</span>.
-          </h1>
-          <p>{t.hero.body}</p>
-          <div className="hero-buttons">
-            <a href="#contact" className="btn-bridal">
-              {t.hero.cta}
-            </a>
+          <div className="hero-inner">
+            <div className="hero-copy">
+              <span className="hero-tag">{t.hero.tag}</span>
+              <h1>
+                {t.hero.title}
+                <span>{t.hero.titleAccent}</span>.
+              </h1>
+              <p>{t.hero.body}</p>
+              <div className="hero-buttons">
+                <a href={contactHref()} className="btn-bridal">
+                  {t.hero.cta}
+                </a>
+              </div>
+            </div>
+            <div className="hero-media">
+              <img src={SITE.heroImage} alt={t.hero.imageAlt} loading="eager" />
+            </div>
           </div>
         </section>
 
@@ -44,7 +62,7 @@ export function LandingPage() {
               <p className="body-text tight">{t.bridal.reviewBody}</p>
               <p className="body-text accent-label">{t.bridal.longevityTitle}</p>
               <p className="body-text tight">{t.bridal.longevityBody}</p>
-              <a href="#contact" className="btn-bridal section-cta">
+              <a href={contactHref("bridal")} className="btn-bridal section-cta">
                 {t.bridal.cta}
               </a>
             </div>
@@ -65,7 +83,7 @@ export function LandingPage() {
               <p className="session-note">{t.curls.note}</p>
               <p className="body-text accent-label spaced">{t.curls.lifestyleTitle}</p>
               <p className="body-text tight">{t.curls.lifestyleBody}</p>
-              <a href="#contact" className="btn-bridal section-cta">
+              <a href={contactHref("curls")} className="btn-bridal section-cta">
                 {t.curls.cta}
               </a>
             </div>
@@ -85,7 +103,7 @@ export function LandingPage() {
               <p className="body-text tight">{t.events.artistryBody}</p>
               <p className="body-text accent-label">{t.events.mobileTitle}</p>
               <p className="body-text tight">{t.events.mobileBody}</p>
-              <a href="#contact" className="btn-curls section-cta">
+              <a href={contactHref("events")} className="btn-curls section-cta">
                 {t.events.cta}
               </a>
             </div>
@@ -93,6 +111,33 @@ export function LandingPage() {
               <img src="/assets/img/team-02.jpg" alt={t.events.imageAlt} loading="lazy" />
             </div>
           </div>
+        </section>
+
+        <section id="portfolio" className="portfolio-section">
+          <span className="hero-tag">{t.portfolio.tag}</span>
+          <h2 className="section-title centered">{t.portfolio.title}</h2>
+          <p className="portfolio-intro">{t.portfolio.intro}</p>
+          <div className="portfolio-grid">
+            {SITE.portfolioImages.map(({ src, key }) => (
+              <a
+                key={src}
+                href={SITE.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="portfolio-item"
+              >
+                <img src={src} alt={t.portfolio.imageAlts[key]} loading="lazy" />
+              </a>
+            ))}
+          </div>
+          <a
+            href={SITE.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="portfolio-more"
+          >
+            {t.portfolio.viewMore}
+          </a>
         </section>
 
         <section id="about" className="section-padding about-section">
@@ -114,8 +159,21 @@ export function LandingPage() {
 
         <section className="instagram-callout">
           <p>{t.instagramCallout.line}</p>
-          <a href={SITE.instagram} target="_blank" rel="noopener noreferrer">
-            {SITE.instagramHandle}
+          <div className="instagram-preview">
+            {SITE.instagramPreviewImages.map((src) => (
+              <a
+                key={src}
+                href={SITE.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="instagram-preview-item"
+              >
+                <img src={src} alt="" loading="lazy" />
+              </a>
+            ))}
+          </div>
+          <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="instagram-cta">
+            {t.instagramCallout.cta} — {SITE.instagramHandle}
           </a>
         </section>
 
@@ -125,6 +183,9 @@ export function LandingPage() {
           <div className="testimonials-grid">
             {t.testimonials.items.map((item) => (
               <article key={item.author} className="testimonial-card">
+                <div className="testimonial-stars" aria-label={t.testimonials.ratingLabel}>
+                  ★★★★★
+                </div>
                 <div className="quote-icon" aria-hidden="true">
                   “
                 </div>
@@ -134,12 +195,35 @@ export function LandingPage() {
               </article>
             ))}
           </div>
+          <a
+            href={SITE.googleReviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="testimonials-link"
+          >
+            {t.testimonials.reviewsLink}
+          </a>
         </section>
 
         <section id="contact" className="contact-section">
           <span className="hero-tag">{t.contact.tag}</span>
           <h2 className="section-title centered">{t.contact.title}</h2>
           <p className="contact-intro">{t.contact.intro}</p>
+
+          <div className="contact-steps">
+            <h3 className="contact-steps-title">{t.contact.stepsTitle}</h3>
+            <ol className="contact-steps-list">
+              {t.contact.steps.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
+            </ol>
+          </div>
+
+          <div className="contact-direct">
+            <p className="contact-direct-title">{t.contact.directTitle}</p>
+            <ContactLinks className="contact-direct-links" />
+          </div>
+
           <InquiryForm />
         </section>
       </main>

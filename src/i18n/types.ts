@@ -6,6 +6,12 @@ export type Translations = {
   meta: {
     title: string;
     description: string;
+    ogImageAlt: string;
+  };
+  langBanner: {
+    message: string;
+    switch: string;
+    dismiss: string;
   };
   header: {
     logo: string;
@@ -26,6 +32,7 @@ export type Translations = {
     titleAccent: string;
     body: string;
     cta: string;
+    imageAlt: string;
   };
   bridal: {
     tag: string;
@@ -71,12 +78,22 @@ export type Translations = {
     badge: string;
     imageAlt: string;
   };
+  portfolio: {
+    tag: string;
+    title: string;
+    intro: string;
+    viewMore: string;
+    imageAlts: Record<ServiceOption, string>;
+  };
   instagramCallout: {
     line: string;
+    cta: string;
   };
   testimonials: {
     tag: string;
     title: string;
+    ratingLabel: string;
+    reviewsLink: string;
     items: readonly {
       quote: string;
       author: string;
@@ -87,22 +104,31 @@ export type Translations = {
     tag: string;
     title: string;
     intro: string;
+    stepsTitle: string;
+    steps: readonly string[];
+    directTitle: string;
     disclaimer: string;
   };
   form: {
     name: string;
     contact: string;
     service: string;
-    date: string;
+    eventDate: string;
+    eventLocation: string;
+    eventDatePlaceholder: string;
+    eventLocationPlaceholder: string;
     message: string;
     submit: string;
+    submitting: string;
     services: Record<ServiceOption, string>;
     errors: {
       name: string;
       contact: string;
-      date: string;
+      eventDate: string;
+      eventLocation: string;
     };
     success: string;
+    error: string;
   };
   footer: {
     copyright: string;
