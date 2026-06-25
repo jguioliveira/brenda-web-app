@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { ContactLinks } from "@/components/ContactLinks";
 import { LanguageBanner } from "@/components/LanguageBanner";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -15,20 +16,28 @@ function SectionNavLinks({
   links,
   activeSection,
   atTop,
+  pathname,
   onNavigate,
 }: {
   links: NavLink[];
   activeSection: string | null;
   atTop: boolean;
+  pathname: string;
   onNavigate?: () => void;
 }) {
   const handleClick = () => onNavigate?.();
 
+  const isLinkActive = (sectionId: string | null) => {
+    if (sectionId === "contact") return pathname === "/contact";
+    if (pathname !== "/") return false;
+    if (sectionId === null) return atTop && activeSection === null;
+    return activeSection === sectionId;
+  };
+
   return (
     <>
       {links.map(({ href, label, sectionId }) => {
-        const isActive =
-          sectionId === null ? atTop && activeSection === null : activeSection === sectionId;
+        const isActive = isLinkActive(sectionId);
 
         return (
           <a
@@ -48,6 +57,7 @@ function SectionNavLinks({
 
 export function SiteHeader() {
   const { t } = useLanguage();
+  const { pathname } = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const [compact, setCompact] = useState(false);
   const [atTop, setAtTop] = useState(true);
@@ -55,13 +65,13 @@ export function SiteHeader() {
   const mobileMenuRef = useRef<HTMLElement>(null);
 
   const navLinks: NavLink[] = [
-    { href: "#top", label: t.header.nav.atelier, sectionId: null },
-    { href: "#bridal", label: t.header.nav.bridal, sectionId: "bridal" },
-    { href: "#curls", label: t.header.nav.curls, sectionId: "curls" },
-    { href: "#events", label: t.header.nav.events, sectionId: "events" },
-    { href: "#about", label: t.header.nav.about, sectionId: "about" },
-    { href: "#testimonials", label: t.header.nav.reviews, sectionId: "testimonials" },
-    { href: "#contact", label: t.header.nav.contact, sectionId: "contact" },
+    { href: "/", label: t.header.nav.atelier, sectionId: null },
+    { href: "/#bridal", label: t.header.nav.bridal, sectionId: "bridal" },
+    { href: "/#curls", label: t.header.nav.curls, sectionId: "curls" },
+    { href: "/#events", label: t.header.nav.events, sectionId: "events" },
+    { href: "/#about", label: t.header.nav.about, sectionId: "about" },
+    { href: "/#testimonials", label: t.header.nav.reviews, sectionId: "testimonials" },
+    { href: "/contact", label: t.header.nav.contact, sectionId: "contact" },
   ];
 
   useEffect(() => {
@@ -137,7 +147,7 @@ export function SiteHeader() {
             </span>
           </button>
 
-          <a href="#top" className="header-brand" onClick={closeMenu}>
+          <a href="/" className="header-brand" onClick={closeMenu}>
             <div className="logo-title">{t.header.logo}</div>
             <div className="logo-subtitle">{t.header.subtitle}</div>
           </a>
@@ -153,6 +163,7 @@ export function SiteHeader() {
             links={navLinks}
             activeSection={activeSection}
             atTop={atTop}
+            pathname={pathname}
           />
           <LanguageSwitcher className="header-lang-desktop" />
         </nav>
@@ -183,6 +194,7 @@ export function SiteHeader() {
               links={navLinks}
               activeSection={activeSection}
               atTop={atTop}
+              pathname={pathname}
               onNavigate={closeMenu}
             />
           </nav>

@@ -1,13 +1,6 @@
 import { useEffect, useState } from "react";
 
-const SECTION_IDS = [
-  "bridal",
-  "curls",
-  "events",
-  "about",
-  "testimonials",
-  "contact",
-] as const;
+const SECTION_IDS = ["bridal", "curls", "events", "about", "testimonials"] as const;
 
 export type SectionId = (typeof SECTION_IDS)[number];
 

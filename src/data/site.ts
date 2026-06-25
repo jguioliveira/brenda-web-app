@@ -33,7 +33,7 @@ export type ServiceOption = "bridal" | "curls" | "events";
 export type PortfolioImageKey = (typeof SITE.portfolioImages)[number]["key"];
 
 export function contactHref(service?: ServiceOption) {
-  return service ? `?service=${service}#contact` : "#contact";
+  return service ? `/contact?service=${service}` : "/contact";
 }
 
 export function isServiceOption(value: string | null): value is ServiceOption {

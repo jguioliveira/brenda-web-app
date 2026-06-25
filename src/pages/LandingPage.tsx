@@ -1,14 +1,11 @@
 import { Helmet } from "react-helmet-async";
-import { ContactLinks } from "@/components/ContactLinks";
-import { InquiryForm } from "@/components/InquiryForm";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { contactHref, SITE } from "@/data/site";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export function LandingPage() {
   const { t } = useLanguage();
-  const year = new Date().getFullYear();
-  const copyright = t.footer.copyright.replace("{year}", String(year));
   const ogImage = `${SITE.siteUrl}${SITE.heroImage}`;
 
   return (
@@ -205,33 +202,9 @@ export function LandingPage() {
           </a>
         </section>
 
-        <section id="contact" className="contact-section">
-          <span className="hero-tag">{t.contact.tag}</span>
-          <h2 className="section-title centered">{t.contact.title}</h2>
-          <p className="contact-intro">{t.contact.intro}</p>
-
-          <div className="contact-steps">
-            <h3 className="contact-steps-title">{t.contact.stepsTitle}</h3>
-            <ol className="contact-steps-list">
-              {t.contact.steps.map((step) => (
-                <li key={step}>{step}</li>
-              ))}
-            </ol>
-          </div>
-
-          <div className="contact-direct">
-            <p className="contact-direct-title">{t.contact.directTitle}</p>
-            <ContactLinks className="contact-direct-links" />
-          </div>
-
-          <InquiryForm />
-        </section>
       </main>
 
-      <footer className="site-footer">
-        <ContactLinks />
-        <p className="footer-copy">{copyright}</p>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
