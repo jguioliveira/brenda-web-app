@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet-async";
 import { SiteFooter } from "@/components/SiteFooter";
-import { SiteHeader } from "@/components/SiteHeader";
 import { contactHref, SITE } from "@/data/site";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -25,11 +24,12 @@ export function LandingPage() {
         <meta name="twitter:image" content={ogImage} />
       </Helmet>
 
-      <SiteHeader />
-
       <main>
         <section className="hero">
           <div className="hero-inner">
+            <div className="hero-media">
+              <img src={SITE.heroImage} alt={t.hero.imageAlt} loading="eager" />
+            </div>
             <div className="hero-copy">
               <span className="hero-tag">{t.hero.tag}</span>
               <h1>
@@ -42,9 +42,6 @@ export function LandingPage() {
                   {t.hero.cta}
                 </a>
               </div>
-            </div>
-            <div className="hero-media">
-              <img src={SITE.heroImage} alt={t.hero.imageAlt} loading="eager" />
             </div>
           </div>
         </section>
@@ -64,7 +61,7 @@ export function LandingPage() {
               </a>
             </div>
             <div className="image-box">
-              <img src="/assets/img/team-01.jpg" alt={t.bridal.imageAlt} loading="lazy" />
+              <img src={SITE.bridalImage} alt={t.bridal.imageAlt} loading="lazy" />
             </div>
           </div>
         </section>
@@ -77,7 +74,6 @@ export function LandingPage() {
               <p className="body-text">{t.curls.intro}</p>
               <p className="body-text accent-label">{t.curls.cuttingTitle}</p>
               <p className="body-text tight">{t.curls.cuttingBody}</p>
-              <p className="session-note">{t.curls.note}</p>
               <p className="body-text accent-label spaced">{t.curls.lifestyleTitle}</p>
               <p className="body-text tight">{t.curls.lifestyleBody}</p>
               <a href={contactHref("curls")} className="btn-bridal section-cta">
@@ -85,7 +81,7 @@ export function LandingPage() {
               </a>
             </div>
             <div className="image-box image-box-light">
-              <img src="/assets/img/team-03.jpg" alt={t.curls.imageAlt} loading="lazy" />
+              <img src={SITE.curlsImage} alt={t.curls.imageAlt} loading="lazy" />
             </div>
           </div>
         </section>
@@ -105,9 +101,37 @@ export function LandingPage() {
               </a>
             </div>
             <div className="image-box">
-              <img src="/assets/img/team-02.jpg" alt={t.events.imageAlt} loading="lazy" />
+              <img src={SITE.eventsImage} alt={t.events.imageAlt} loading="lazy" />
             </div>
           </div>
+        </section>
+
+        <section id="testimonials" className="testimonials-section">
+          <span className="hero-tag">{t.testimonials.tag}</span>
+          <h2 className="section-title centered">{t.testimonials.title}</h2>
+          <div className="testimonials-grid">
+            {t.testimonials.items.map((item) => (
+              <article key={item.author} className="testimonial-card">
+                <div className="testimonial-stars" aria-label={t.testimonials.ratingLabel}>
+                  ★★★★★
+                </div>
+                <div className="quote-icon" aria-hidden="true">
+                  “
+                </div>
+                <p className="testimonial-text">&ldquo;{item.quote}&rdquo;</p>
+                <div className="testimonial-author">{item.author}</div>
+                <div className="testimonial-sub">{item.sub}</div>
+              </article>
+            ))}
+          </div>
+          <a
+            href={SITE.googleReviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="testimonials-link"
+          >
+            {t.testimonials.reviewsLink}
+          </a>
         </section>
 
         <section id="portfolio" className="portfolio-section">
@@ -140,7 +164,7 @@ export function LandingPage() {
         <section id="about" className="section-padding about-section">
           <div className="split-container">
             <div className="image-box image-box-accent">
-              <img src="/assets/img/service-img.jpg" alt={t.about.imageAlt} loading="lazy" />
+              <img src={SITE.aboutImage} alt={t.about.imageAlt} loading="lazy" />
             </div>
             <div className="content-box about-text">
               <span className="hero-tag">{t.about.tag}</span>
@@ -170,35 +194,7 @@ export function LandingPage() {
             ))}
           </div>
           <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="instagram-cta">
-            {t.instagramCallout.cta} — {SITE.instagramHandle}
-          </a>
-        </section>
-
-        <section id="testimonials" className="testimonials-section">
-          <span className="hero-tag">{t.testimonials.tag}</span>
-          <h2 className="section-title centered">{t.testimonials.title}</h2>
-          <div className="testimonials-grid">
-            {t.testimonials.items.map((item) => (
-              <article key={item.author} className="testimonial-card">
-                <div className="testimonial-stars" aria-label={t.testimonials.ratingLabel}>
-                  ★★★★★
-                </div>
-                <div className="quote-icon" aria-hidden="true">
-                  “
-                </div>
-                <p className="testimonial-text">&ldquo;{item.quote}&rdquo;</p>
-                <div className="testimonial-author">{item.author}</div>
-                <div className="testimonial-sub">{item.sub}</div>
-              </article>
-            ))}
-          </div>
-          <a
-            href={SITE.googleReviewsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="testimonials-link"
-          >
-            {t.testimonials.reviewsLink}
+            {t.instagramCallout.cta} - {SITE.instagramHandle}
           </a>
         </section>
 

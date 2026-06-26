@@ -2,10 +2,10 @@ import type { Translations } from "@/i18n/types";
 
 export const en: Translations = {
   meta: {
-    title: "Brenda Artistry — Premium Hair & Makeup",
+    title: "Brenda Artistry - Premium Hair & Makeup",
     description:
       "Customised mobile hair and makeup across Gold Coast and Brisbane. Bridal, curl clinic, and special events.",
-    ogImageAlt: "Brenda Artistry — premium mobile hair and makeup",
+    ogImageAlt: "Brenda Artistry - premium mobile hair and makeup",
   },
   langBanner: {
     message: "Would you like to view this site in {language}?",
@@ -13,10 +13,10 @@ export const en: Translations = {
     dismiss: "No thanks",
   },
   header: {
-    logo: "Brenda",
-    subtitle: "Premium Hair & Makeup Artistry",
+    logo: "Brenda Mello",
+    subtitle: "Hair • Makeup • Curl",
     nav: {
-      atelier: "The Atelier",
+      atelier: "Home",
       bridal: "Bridal",
       curls: "The Curl Clinic",
       events: "Special Events",
@@ -40,7 +40,7 @@ export const en: Translations = {
       "Your wedding day should feel calm, grounded, and entirely yours. I provide a fully mobile service across Gold Coast and Brisbane, bringing a serene beauty experience directly to your venue or hotel so you can prepare in absolute comfort. Bridal trials and consultations are tailored and scheduled individually to ensure your vision is perfectly captured before the big day.",
     reviewTitle: "An Integrative Review:",
     reviewBody:
-      "Months before the wedding, we look at the bigger picture—your skin and hair type, daily habits, hydration, and skincare routine. Understanding how your skin and hair behave is what allows us to create a flawless, intentional canvas.",
+      "Months before the wedding, we look at the bigger picture-your skin and hair type, daily habits, hydration, and skincare routine. Understanding how your skin and hair behave is what allows us to create a flawless, intentional canvas.",
     longevityTitle: "High-Performance Longevity:",
     longevityBody:
       "Using curated, premium products meticulously selected to feel weightless on your skin, photograph beautifully in high-definition, and remain fresh and resilient.",
@@ -55,7 +55,6 @@ export const en: Translations = {
     cuttingTitle: "Bespoke Dry Cutting:",
     cuttingBody:
       "Haircut performed on dry hair to understand how your curls naturally fall. We begin with a structural curvature analysis, looking at your hair's health, face shape, and multiple textures to design a cut that works for you.",
-    note: "Note for your session: Please arrive with your curls completely dry, clean, and in their natural state (free of heavy products, braids, or clips) so I can evaluate your natural pattern accurately.",
     lifestyleTitle: "Lifestyle & Homecare Guidance:",
     lifestyleBody:
       "We look closely at your daily routine, habits, and current products to co-create a practical, personalised styling and hydration ritual that you can easily maintain at home.",
@@ -158,7 +157,7 @@ export const en: Translations = {
       eventDate: "Event date is required.",
       eventLocation: "Event location is required.",
     },
-    success: "Thank you — your message has been received. I'll be in touch within 1–2 business days.",
+    success: "Thank you - your message has been received. I'll be in touch within 1–2 business days.",
     error: "Something went wrong sending your message. Please try again or contact me directly below.",
   },
   footer: {

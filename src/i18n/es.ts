@@ -2,10 +2,10 @@ import type { Translations } from "@/i18n/types";
 
 export const es: Translations = {
   meta: {
-    title: "Brenda Artistry — Hair & Makeup Premium",
+    title: "Brenda Artistry - Hair & Makeup Premium",
     description:
       "Hair y makeup móvil personalizado en Gold Coast y Brisbane. Bodas, clínica de rizos y eventos especiales.",
-    ogImageAlt: "Brenda Artistry — hair y makeup móvil premium",
+    ogImageAlt: "Brenda Artistry - hair y makeup móvil premium",
   },
   langBanner: {
     message: "¿Te gustaría ver este sitio en {language}?",
@@ -13,10 +13,10 @@ export const es: Translations = {
     dismiss: "No, gracias",
   },
   header: {
-    logo: "Brenda",
-    subtitle: "Hair & Makeup Artístico Premium",
+    logo: "Brenda Mello",
+    subtitle: "Hair • Makeup • Curl",
     nav: {
-      atelier: "El Atelier",
+      atelier: "Inicio",
       bridal: "Bodas",
       curls: "Clínica de Rizos",
       events: "Eventos Especiales",
@@ -40,12 +40,12 @@ export const es: Translations = {
       "Tu día de boda debe sentirse calmado, sereno y completamente tuyo. Ofrezco un servicio 100% móvil en Gold Coast y Brisbane, llevando una experiencia de belleza tranquila directamente a tu venue u hotel para que te prepares con total comodidad. Pruebas y consultas se personalizan y agendan individualmente para capturar tu visión antes del gran día.",
     reviewTitle: "Una Revisión Integrativa:",
     reviewBody:
-      "Meses antes de la boda, observamos el panorama completo — tipo de piel y cabello, hábitos diarios, hidratación y rutina de skincare. Entender cómo se comportan tu piel y cabello permite crear una base impecable e intencional.",
+      "Meses antes de la boda, observamos el panorama completo - tipo de piel y cabello, hábitos diarios, hidratación y rutina de skincare. Entender cómo se comportan tu piel y cabello permite crear una base impecable e intencional.",
     longevityTitle: "Alta Performance y Duración:",
     longevityBody:
       "Uso productos premium cuidadosamente seleccionados para sentirse ligeros en la piel, fotografiarse hermosamente en alta definición y permanecer frescos y resilientes.",
     cta: "Consultar Disponibilidad",
-    imageAlt: "Look clásico nupcial — hair y makeup",
+    imageAlt: "Look clásico nupcial - hair y makeup",
   },
   curls: {
     tag: "Cuidado Signature",
@@ -55,7 +55,6 @@ export const es: Translations = {
     cuttingTitle: "Corte en Seco a Medida:",
     cuttingBody:
       "Corte realizado en cabello seco para entender cómo caen tus rizos naturalmente. Comenzamos con un análisis estructural de la curvatura, observando la salud del cabello, forma del rostro y texturas para diseñar un corte que funcione para ti.",
-    note: "Para tu sesión: llega con los rizos completamente secos, limpios y en su estado natural (sin productos pesados, trenzas o clips) para que pueda evaluar tu patrón con precisión.",
     lifestyleTitle: "Rutina y Cuidado en Casa:",
     lifestyleBody:
       "Analizamos de cerca tu rutina diaria, hábitos y productos actuales para co-crear un ritual práctico y personalizado de styling e hidratación que puedas mantener en casa.",
@@ -81,7 +80,7 @@ export const es: Translations = {
     title: "Detrás del Arte",
     p1: "Bienvenida. Soy Brenda, la artista detrás de este espacio móvil de belleza. Mi trabajo sigue una filosofía simple: la verdadera elegancia no es cambiar quién eres, sino realzar la belleza que ya posees.",
     p2: "Con formación internacional y entrenamiento continuo en makeup refinado, peinados y styling avanzado de rizos, miro la belleza de forma individual. No creo en fórmulas únicas. Ya sea diseñando un corte en seco para tu patrón de rizo o revisando tu rutina antes de tu boda, cada detalle se adapta a ti.",
-    p3: "Para mí, la esencia de mi trabajo está en el cuidado — en la textura respirable de los productos, el ambiente calmado que llevo a tu ubicación y la conexión genuina que construimos. Mi objetivo es que te mires al espejo y veas una versión hermosa y segura de ti misma, totalmente auténtica.",
+    p3: "Para mí, la esencia de mi trabajo está en el cuidado - en la textura respirable de los productos, el ambiente calmado que llevo a tu ubicación y la conexión genuina que construimos. Mi objetivo es que te mires al espejo y veas una versión hermosa y segura de ti misma, totalmente auténtica.",
     p4: "Impulsada por esta pasión de empoderar a las mujeres a entender su propia belleza, estoy preparando masterclasses exclusivas de automakeup y styling de rizos para compartir estas técnicas pronto.",
     badge: "✨ Próximamente: Masterclasses Exclusivas de Automakeup & Rizos",
     imageAlt: "Brenda Mello, artista de makeup y hair",
@@ -158,7 +157,7 @@ export const es: Translations = {
       eventDate: "La fecha del evento es obligatoria.",
       eventLocation: "La ubicación del evento es obligatoria.",
     },
-    success: "Gracias — recibí tu mensaje y me pondré en contacto en 1–2 días hábiles.",
+    success: "Gracias - recibí tu mensaje y me pondré en contacto en 1–2 días hábiles.",
     error: "Algo salió mal al enviar. Inténtalo de nuevo o contáctame directamente abajo.",
   },
   footer: {

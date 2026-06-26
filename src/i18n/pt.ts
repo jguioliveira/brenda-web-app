@@ -2,10 +2,10 @@ import type { Translations } from "@/i18n/types";
 
 export const pt: Translations = {
   meta: {
-    title: "Brenda Artistry — Hair & Makeup Premium",
+    title: "Brenda Artistry - Hair & Makeup Premium",
     description:
       "Hair e makeup mobile personalizados na Gold Coast e Brisbane. Noivas, clínica de cachos e eventos especiais.",
-    ogImageAlt: "Brenda Artistry — hair e makeup mobile premium",
+    ogImageAlt: "Brenda Artistry - hair e makeup mobile premium",
   },
   langBanner: {
     message: "Gostaria de ver este site em {language}?",
@@ -13,10 +13,10 @@ export const pt: Translations = {
     dismiss: "Não, obrigada",
   },
   header: {
-    logo: "Brenda",
-    subtitle: "Hair & Makeup Artístico Premium",
+    logo: "Brenda Mello",
+    subtitle: "Hair • Makeup • Curl",
     nav: {
-      atelier: "O Atelier",
+      atelier: "Início",
       bridal: "Noivas",
       curls: "Clínica de Cachos",
       events: "Eventos Especiais",
@@ -40,12 +40,12 @@ export const pt: Translations = {
       "Seu dia de casamento deve ser calmo, leve e totalmente seu. Ofereço um serviço 100% mobile na Gold Coast e Brisbane, levando uma experiência de beleza serena diretamente ao seu local para que você se prepare com total conforto. Provas e consultorias são personalizadas e agendadas individualmente para capturar sua visão antes do grande dia.",
     reviewTitle: "Uma Análise Integrativa:",
     reviewBody:
-      "Meses antes do casamento, observamos o panorama completo — tipo de pele e cabelo, hábitos diários, hidratação e rotina de skincare. Entender como sua pele e cabelo se comportam permite criar uma base impecável e intencional.",
+      "Meses antes do casamento, observamos o panorama completo - tipo de pele e cabelo, hábitos diários, hidratação e rotina de skincare. Entender como sua pele e cabelo se comportam permite criar uma base impecável e intencional.",
     longevityTitle: "Alta Performance e Longevidade:",
     longevityBody:
       "Uso produtos premium cuidadosamente selecionados para serem leves na pele, fotografarem lindamente em alta definição e permanecerem frescos e resilientes.",
     cta: "Verificar Disponibilidade",
-    imageAlt: "Look clássico de noiva — hair e makeup",
+    imageAlt: "Look clássico de noiva - hair e makeup",
   },
   curls: {
     tag: "Cuidado Signature",
@@ -55,7 +55,6 @@ export const pt: Translations = {
     cuttingTitle: "Corte a Seco Sob Medida:",
     cuttingBody:
       "Corte realizado no cabelo seco para entender como seus cachos caem naturalmente. Começamos com uma análise estrutural da curvatura, observando a saúde do cabelo, formato do rosto e texturas para criar um corte que funcione para você.",
-    note: "Para sua sessão: chegue com os cachos completamente secos, limpos e no estado natural (sem produtos pesados, tranças ou presilhas) para que eu possa avaliar seu padrão com precisão.",
     lifestyleTitle: "Rotina & Cuidados em Casa:",
     lifestyleBody:
       "Analisamos de perto sua rotina diária, hábitos e produtos atuais para co-criar um ritual prático e personalizado de styling e hidratação que você possa manter em casa.",
@@ -81,7 +80,7 @@ export const pt: Translations = {
     title: "Por Trás da Artistry",
     p1: "Bem-vinda. Sou Brenda, a artista por trás deste espaço mobile de beleza. Meu trabalho segue uma filosofia simples: a verdadeira elegância não é mudar quem você é, mas realçar a beleza que você já possui.",
     p2: "Com formação internacional e treinamento contínuo em makeup refinado, penteados e styling avançado de cachos, olho a beleza de forma individual. Não acredito em fórmulas únicas. Seja mapeando um corte a seco para seu padrão de cacho ou revisando sua rotina antes do casamento, cada detalhe é pensado para você.",
-    p3: "Para mim, a essência do meu trabalho está no cuidado — na textura respirável dos produtos, no ambiente calmo que levo ao seu local e na conexão genuína que construímos. Meu objetivo é que você se olhe no espelho e veja uma versão bonita e confiante de si mesma, totalmente autêntica.",
+    p3: "Para mim, a essência do meu trabalho está no cuidado - na textura respirável dos produtos, no ambiente calmo que levo ao seu local e na conexão genuína que construímos. Meu objetivo é que você se olhe no espelho e veja uma versão bonita e confiante de si mesma, totalmente autêntica.",
     p4: "Movida por essa paixão de empoderar mulheres a entender sua própria beleza, estou preparando masterclasses exclusivas de automakeup e styling de cachos para compartilhar essas técnicas em breve.",
     badge: "✨ Em Breve: Masterclasses Exclusivas de Automakeup & Cachos",
     imageAlt: "Brenda Mello, artista de makeup e hair",
@@ -158,7 +157,7 @@ export const pt: Translations = {
       eventDate: "A data do evento é obrigatória.",
       eventLocation: "O local do evento é obrigatório.",
     },
-    success: "Obrigada — recebi sua mensagem e entrarei em contato em 1–2 dias úteis.",
+    success: "Obrigada - recebi sua mensagem e entrarei em contato em 1–2 dias úteis.",
     error: "Algo deu errado ao enviar. Tente novamente ou entre em contato diretamente abaixo.",
   },
   footer: {

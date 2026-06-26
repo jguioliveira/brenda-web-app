@@ -39,7 +39,7 @@ button {
     cursor: pointer;
 }
 
-img {
+img:not(.contact-link-icon) {
     display: block;
     width: 100%;
     height: 100%;
@@ -83,13 +83,13 @@ a:focus:not(:focus-visible) {
 }
 
 .site-header.is-compact .logo-title {
-    font-size: 22px;
-    letter-spacing: 5px;
+    font-size: 30px;
 }
 
 .site-header.is-compact .logo-subtitle {
     margin-top: 4px;
-    font-size: 9px;
+    font-size: 8px;
+    letter-spacing: 0.28em;
 }
 
 .site-header.is-compact .site-nav {
@@ -162,20 +162,23 @@ a:focus:not(:focus-visible) {
 }
 
 .logo-title {
-    font-size: 28px;
-    letter-spacing: 6px;
-    text-transform: uppercase;
+    font-family: "Great Vibes", "Brenda Script", cursive;
+    font-size: 38px;
+    letter-spacing: 0.02em;
+    text-transform: none;
     font-weight: normal;
+    line-height: 1;
+    color: var(--ametista);
 }
 
 .logo-subtitle {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    color: var(--lilas-base);
-    letter-spacing: 3px;
-    margin-top: 8px;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    font-size: 9px;
+    font-weight: 300;
+    color: var(--ametista);
+    letter-spacing: 0.32em;
+    margin-top: 6px;
     text-transform: uppercase;
-    font-weight: bold;
 }
 
 .menu-toggle {
@@ -403,7 +406,7 @@ a:focus:not(:focus-visible) {
 
 .hero-buttons {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 25px;
 }
 
@@ -449,7 +452,10 @@ a:focus:not(:focus-visible) {
 }
 
 .section-cta {
-    margin-top: 20px;
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 20px auto 0;
     padding: 14px 30px;
 }
 
@@ -544,18 +550,6 @@ a:focus:not(:focus-visible) {
     line-height: 1.8;
     opacity: 0.8;
     margin-bottom: 20px;
-}
-
-.session-note {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    line-height: 1.6;
-    color: var(--ametista);
-    font-style: italic;
-    background-color: rgba(219, 203, 176, 0.3);
-    padding: 10px 15px;
-    border-left: 2px solid var(--lilas-base);
-    margin: 16px 0;
 }
 
 .future-badge {
@@ -955,11 +949,6 @@ a:focus:not(:focus-visible) {
     flex-shrink: 0;
 }
 
-img.contact-link-icon {
-    display: block;
-    object-fit: contain;
-}
-
 .contact-link-icon--whatsapp {
     width: 20px;
     height: 20px;
@@ -981,6 +970,15 @@ img.contact-link-icon {
     .split-container,
     .split-reverse {
         flex-direction: column;
+    }
+
+    .split-container .image-box {
+        order: -1;
+        width: 100%;
+    }
+
+    .split-container .content-box {
+        order: 0;
     }
 
     .testimonials-grid {
@@ -1110,8 +1108,27 @@ img.contact-link-icon {
         border-top: 1px solid rgba(219, 203, 176, 0.45);
     }
 
+    .mobile-contact-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 24px;
+    }
+
+    .mobile-contact-links .contact-link {
+        color: var(--lilas-base);
+        width: auto;
+        padding: 8px;
+        border-bottom: 0;
+    }
+
+    .mobile-contact-links .contact-link-label {
+        display: none;
+    }
+
     .site-footer .footer-links,
-    .mobile-contact-links,
     .contact-direct-links {
         flex-direction: row;
         justify-content: center;
@@ -1120,7 +1137,6 @@ img.contact-link-icon {
     }
 
     .site-footer .footer-links .contact-link,
-    .mobile-contact-links .contact-link,
     .contact-direct-links .contact-link {
         width: auto;
         padding: 8px;
@@ -1128,25 +1144,22 @@ img.contact-link-icon {
     }
 
     .site-footer .footer-links .contact-link-label,
-    .mobile-contact-links .contact-link-label,
     .contact-direct-links .contact-link-label {
         display: none;
     }
 
-    .contact-link-icon {
+    .mobile-contact-links .contact-link-icon,
+    .site-footer .footer-links .contact-link-icon,
+    .contact-direct-links .contact-link-icon {
         width: 22px;
         height: 22px;
     }
 
-    .contact-link-icon--whatsapp {
+    .mobile-contact-links .contact-link-icon--whatsapp,
+    .site-footer .footer-links .contact-link-icon--whatsapp,
+    .contact-direct-links .contact-link-icon--whatsapp {
         width: 24px;
         height: 24px;
-    }
-
-    .mobile-contact-links {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
     }
 
     .mobile-menu-inner > .lang-switcher {
@@ -1180,8 +1193,11 @@ img.contact-link-icon {
     .btn-bridal,
     .btn-curls,
     .btn-primary {
+        display: block;
         width: 100%;
         max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero-buttons {

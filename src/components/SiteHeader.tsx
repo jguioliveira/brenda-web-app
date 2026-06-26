@@ -69,10 +69,14 @@ export function SiteHeader() {
     { href: "/#bridal", label: t.header.nav.bridal, sectionId: "bridal" },
     { href: "/#curls", label: t.header.nav.curls, sectionId: "curls" },
     { href: "/#events", label: t.header.nav.events, sectionId: "events" },
-    { href: "/#about", label: t.header.nav.about, sectionId: "about" },
     { href: "/#testimonials", label: t.header.nav.reviews, sectionId: "testimonials" },
+    { href: "/#about", label: t.header.nav.about, sectionId: "about" },
     { href: "/contact", label: t.header.nav.contact, sectionId: "contact" },
   ];
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     document.body.classList.toggle("menu-open", menuOpen);

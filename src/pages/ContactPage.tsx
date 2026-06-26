@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet-async";
 import { ContactLinks } from "@/components/ContactLinks";
 import { InquiryForm } from "@/components/InquiryForm";
 import { SiteFooter } from "@/components/SiteFooter";
-import { SiteHeader } from "@/components/SiteHeader";
 import { SITE } from "@/data/site";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -21,8 +20,6 @@ export function ContactPage() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={`${SITE.siteUrl}/contact`} />
       </Helmet>
-
-      <SiteHeader />
 
       <main>
         <section className="contact-section">

@@ -1,4 +1,4 @@
-# Brenda Mello Makeup — web app
+# Brenda Mello Makeup - web app
 
 Vite + React + TypeScript SPA. Production output is static files in `dist/`.
 
@@ -87,6 +87,6 @@ Rebuild; internal asset paths will use that prefix.
 
 ## Project layout
 
-- `src/` — React app and routes
-- `public/` — static assets copied to `dist` as-is (`robots.txt`, favicon, `_redirects`, CSS, images)
-- `dist/` — build output (ignored by git)
+- `src/` - React app and routes
+- `public/` - static assets copied to `dist` as-is (`robots.txt`, favicon, `_redirects`, CSS, images)
+- `dist/` - build output (ignored by git)

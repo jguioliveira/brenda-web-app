@@ -51,7 +51,6 @@ export type Translations = {
     intro: string;
     cuttingTitle: string;
     cuttingBody: string;
-    note: string;
     lifestyleTitle: string;
     lifestyleBody: string;
     cta: string;
