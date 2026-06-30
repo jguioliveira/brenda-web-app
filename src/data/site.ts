@@ -4,8 +4,8 @@ export const SITE = {
   email: "contact@brendamello.com",
   phone: "+61422406209",
   phoneDisplay: "+61 422 406 209",
-  instagram: "https://www.instagram.com/brendamellomakeup/",
-  instagramHandle: "@brendamellomakeup",
+  instagram: "https://www.instagram.com/brendamellobeauty_/",
+  instagramHandle: "@brendamellobeauty_",
   whatsapp: "https://wa.me/61422406209",
   googleReviewsUrl: "https://share.google/b5WRO5uPi4RBZ3acH",
   siteUrl: import.meta.env.VITE_SITE_URL ?? "https://brendamello.com",
@@ -17,29 +17,21 @@ export const SITE = {
   curlsImage: "/assets/img/IMG_0779.jpg",
   eventsImage: "/assets/img/IMG_7739.jpg",
   aboutImage: "/assets/img/APC_0199.jpg",
-  portfolioImages: [
-    { src: "/assets/img/card-01.jpg", key: "bridal" as const },
-    { src: "/assets/img/card-02.jpg", key: "events" as const },
-    { src: "/assets/img/card-03.jpg", key: "curls" as const },
-    { src: "/assets/img/team-01.jpg", key: "bridal" as const },
-    { src: "/assets/img/team-02.jpg", key: "events" as const },
-    { src: "/assets/img/team-03.jpg", key: "curls" as const },
-  ],
+  showInstagramCallout: false,
   instagramPreviewImages: [
-    "/assets/img/card-01.jpg",
-    "/assets/img/team-01.jpg",
-    "/assets/img/card-02.jpg",
-    "/assets/img/team-02.jpg",
-    "/assets/img/card-03.jpg",
-    "/assets/img/team-03.jpg",
+    "/assets/img/portfolio/IMG_7739.jpeg",
+    "/assets/img/portfolio/IMG_6725.jpeg",
+    "/assets/img/portfolio/IMG_5354.jpeg",
+    "/assets/img/portfolio/IMG_6431.jpeg",
+    "/assets/img/portfolio/IMG_9118.jpeg",
+    "/assets/img/portfolio/IMG_9628.jpeg",
   ],
 } as const;
 
 export type ServiceOption = "bridal" | "curls" | "events";
-export type PortfolioImageKey = (typeof SITE.portfolioImages)[number]["key"];
 
 export function contactHref(service?: ServiceOption) {
-  return service ? `/contact?service=${service}` : "/contact";
+  return service ? `/?service=${service}#contact` : "/#contact";
 }
 
 export function isServiceOption(value: string | null): value is ServiceOption {

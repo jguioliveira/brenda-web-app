@@ -1,6 +1,10 @@
 import { Helmet } from "react-helmet-async";
+import { PortfolioCarousel } from "@/components/PortfolioCarousel";
+import { ContactSection } from "@/components/ContactSection";
 import { SiteFooter } from "@/components/SiteFooter";
+import { TestimonialCard } from "@/components/TestimonialCard";
 import { contactHref, SITE } from "@/data/site";
+import { TESTIMONIALS } from "@/data/testimonials";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 export function LandingPage() {
@@ -110,18 +114,8 @@ export function LandingPage() {
           <span className="hero-tag">{t.testimonials.tag}</span>
           <h2 className="section-title centered">{t.testimonials.title}</h2>
           <div className="testimonials-grid">
-            {t.testimonials.items.map((item) => (
-              <article key={item.author} className="testimonial-card">
-                <div className="testimonial-stars" aria-label={t.testimonials.ratingLabel}>
-                  ★★★★★
-                </div>
-                <div className="quote-icon" aria-hidden="true">
-                  “
-                </div>
-                <p className="testimonial-text">&ldquo;{item.quote}&rdquo;</p>
-                <div className="testimonial-author">{item.author}</div>
-                <div className="testimonial-sub">{item.sub}</div>
-              </article>
+            {TESTIMONIALS.map((item) => (
+              <TestimonialCard key={item.id} item={item} />
             ))}
           </div>
           <a
@@ -138,19 +132,7 @@ export function LandingPage() {
           <span className="hero-tag">{t.portfolio.tag}</span>
           <h2 className="section-title centered">{t.portfolio.title}</h2>
           <p className="portfolio-intro">{t.portfolio.intro}</p>
-          <div className="portfolio-grid">
-            {SITE.portfolioImages.map(({ src, key }) => (
-              <a
-                key={src}
-                href={SITE.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="portfolio-item"
-              >
-                <img src={src} alt={t.portfolio.imageAlts[key]} loading="lazy" />
-              </a>
-            ))}
-          </div>
+          <PortfolioCarousel />
           <a
             href={SITE.instagram}
             target="_blank"
@@ -178,26 +160,29 @@ export function LandingPage() {
           </div>
         </section>
 
-        <section className="instagram-callout">
-          <p>{t.instagramCallout.line}</p>
-          <div className="instagram-preview">
-            {SITE.instagramPreviewImages.map((src) => (
-              <a
-                key={src}
-                href={SITE.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="instagram-preview-item"
-              >
-                <img src={src} alt="" loading="lazy" />
-              </a>
-            ))}
-          </div>
-          <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="instagram-cta">
-            {t.instagramCallout.cta} - {SITE.instagramHandle}
-          </a>
-        </section>
+        {SITE.showInstagramCallout ? (
+          <section className="instagram-callout">
+            <p>{t.instagramCallout.line}</p>
+            <div className="instagram-preview">
+              {SITE.instagramPreviewImages.map((src) => (
+                <a
+                  key={src}
+                  href={SITE.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="instagram-preview-item"
+                >
+                  <img src={src} alt="" loading="lazy" />
+                </a>
+              ))}
+            </div>
+            <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="instagram-cta">
+              {t.instagramCallout.cta} - {SITE.instagramHandle}
+            </a>
+          </section>
+        ) : null}
 
+        <ContactSection />
       </main>
 
       <SiteFooter />

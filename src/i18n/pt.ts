@@ -90,6 +90,9 @@ export const pt: Translations = {
     title: "Trabalhos Recentes",
     intro: "Um vislumbre de artistry nupcial, cachos e eventos na Gold Coast e Brisbane.",
     viewMore: "Ver mais no Instagram",
+    prevSlide: "Foto anterior",
+    nextSlide: "Próxima foto",
+    defaultImageAlt: "Trabalhos recentes de cabelo e maquiagem por Brenda Mello",
     imageAlts: {
       bridal: "Hair e makeup nupcial",
       curls: "Styling e corte de cachos naturais",
@@ -105,20 +108,8 @@ export const pt: Translations = {
     title: "Depoimentos & Reviews",
     ratingLabel: "5 de 5 estrelas",
     reviewsLink: "Ler mais avaliações no Google",
-    items: [
-      {
-        quote:
-          "Um sonho trabalhar com ela! Fez meu makeup de noiva e durou lágrimas, umidade e dança. Sua abordagem holística deixou minha pele impecável. Recomendo muito o serviço mobile na Gold Coast!",
-        author: "Sarah Jenkins",
-        sub: "Cliente Noiva • Gold Coast",
-      },
-      {
-        quote:
-          "Finalmente encontrei alguém na Austrália que entende de cachos! O corte a seco mudou a vida do meu cabelo. Ela analisa nossa rotina e dá dicas reais de homecare. Perfeita!",
-        author: "Mariana Silva",
-        sub: "Clínica de Cachos • Brisbane",
-      },
-    ],
+    readMore: "Ler mais",
+    readLess: "Ler menos",
   },
   contact: {
     tag: "Reserva do Atelier",

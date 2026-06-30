@@ -28,7 +28,6 @@ function SectionNavLinks({
   const handleClick = () => onNavigate?.();
 
   const isLinkActive = (sectionId: string | null) => {
-    if (sectionId === "contact") return pathname === "/contact";
     if (pathname !== "/") return false;
     if (sectionId === null) return atTop && activeSection === null;
     return activeSection === sectionId;
@@ -71,7 +70,7 @@ export function SiteHeader() {
     { href: "/#events", label: t.header.nav.events, sectionId: "events" },
     { href: "/#testimonials", label: t.header.nav.reviews, sectionId: "testimonials" },
     { href: "/#about", label: t.header.nav.about, sectionId: "about" },
-    { href: "/contact", label: t.header.nav.contact, sectionId: "contact" },
+    { href: "/#contact", label: t.header.nav.contact, sectionId: "contact" },
   ];
 
   useEffect(() => {

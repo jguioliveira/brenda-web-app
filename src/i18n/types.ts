@@ -82,6 +82,9 @@ export type Translations = {
     title: string;
     intro: string;
     viewMore: string;
+    prevSlide: string;
+    nextSlide: string;
+    defaultImageAlt: string;
     imageAlts: Record<ServiceOption, string>;
   };
   instagramCallout: {
@@ -93,11 +96,8 @@ export type Translations = {
     title: string;
     ratingLabel: string;
     reviewsLink: string;
-    items: readonly {
-      quote: string;
-      author: string;
-      sub: string;
-    }[];
+    readMore: string;
+    readLess: string;
   };
   contact: {
     tag: string;

@@ -90,6 +90,9 @@ export const en: Translations = {
     title: "Recent Work",
     intro: "A glimpse of bridal, curl, and event artistry across Gold Coast and Brisbane.",
     viewMore: "View more on Instagram",
+    prevSlide: "Previous photo",
+    nextSlide: "Next photo",
+    defaultImageAlt: "Recent hair and makeup artistry by Brenda Mello",
     imageAlts: {
       bridal: "Bridal hair and makeup artistry",
       curls: "Natural curl styling and cut",
@@ -105,20 +108,8 @@ export const en: Translations = {
     title: "Kind Words & Reviews",
     ratingLabel: "5 out of 5 stars",
     reviewsLink: "Read more reviews on Google",
-    items: [
-      {
-        quote:
-          "An absolute dream to work with! She did my bridal makeup and it lasted through tears, humidity, and dancing. Her holistic approach made my skin look flawless. Highly recommend her mobile service in Gold Coast!",
-        author: "Sarah Jenkins",
-        sub: "Bridal Client • Gold Coast",
-      },
-      {
-        quote:
-          "Finally found someone in Australia who truly understands curls! The dry cut changed my hair. She analyses our routine and gives real homecare tips. Perfect!",
-        author: "Mariana Silva",
-        sub: "The Curl Clinic • Brisbane",
-      },
-    ],
+    readMore: "Read more",
+    readLess: "Read less",
   },
   contact: {
     tag: "Atelier Booking",

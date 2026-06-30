@@ -1,7 +1,8 @@
-import { type FormEvent, useEffect, useState } from "react";
+import { type FormEvent, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { isServiceOption, SITE, type ServiceOption } from "@/data/site";
 import { useLanguage } from "@/i18n/LanguageContext";
+import type { Language } from "@/i18n/types";
 
 type FormState = {
   name: string;
@@ -23,15 +24,38 @@ const initialState: FormState = {
   message: "",
 };
 
+const DATE_INPUT_LOCALE: Record<Language, string> = {
+  en: "en-AU",
+  pt: "pt-BR",
+  es: "es",
+};
+
+function todayIsoDate() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const day = String(now.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function formatEventDate(isoDate: string, locale: string) {
+  const date = new Date(`${isoDate}T12:00:00`);
+  if (Number.isNaN(date.getTime())) return isoDate;
+
+  return new Intl.DateTimeFormat(locale, { dateStyle: "long" }).format(date);
+}
+
 async function sendInquiry(
   values: FormState,
   serviceLabel: string,
+  dateLocale: string,
 ): Promise<boolean> {
+  const eventDate = formatEventDate(values.eventDate.trim(), dateLocale);
   const payload = {
     name: values.name.trim(),
     contact: values.contact.trim(),
     service: serviceLabel,
-    eventDate: values.eventDate.trim(),
+    eventDate,
     eventLocation: values.eventLocation.trim(),
     message: values.message.trim(),
     _subject: `Enquiry: ${serviceLabel}`,
@@ -66,13 +90,15 @@ async function sendInquiry(
 }
 
 export function InquiryForm() {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   const [searchParams] = useSearchParams();
   const [values, setValues] = useState<FormState>(initialState);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState(false);
+  const minEventDate = useMemo(() => todayIsoDate(), []);
+  const dateInputLocale = DATE_INPUT_LOCALE[language];
 
   useEffect(() => {
     const service = searchParams.get("service");
@@ -81,7 +107,7 @@ export function InquiryForm() {
     }
   }, [searchParams]);
 
-  const updateField = <K extends keyof FormState>(field: K, value: FormState[K]) => {
+  const updateField = <K extends keyof FormState,>(field: K, value: FormState[K]) => {
     setValues((current) => ({ ...current, [field]: value }));
     if (errors[field]) {
       setErrors((current) => {
@@ -111,7 +137,7 @@ export function InquiryForm() {
     setSubmitError(false);
 
     try {
-      const ok = await sendInquiry(values, t.form.services[values.service]);
+      const ok = await sendInquiry(values, t.form.services[values.service], dateInputLocale);
       if (ok) {
         setSubmitted(true);
       } else {
@@ -182,9 +208,10 @@ export function InquiryForm() {
           <label htmlFor="inquiry-date">{t.form.eventDate}</label>
           <input
             id="inquiry-date"
-            type="text"
+            type="date"
+            lang={dateInputLocale}
+            min={minEventDate}
             value={values.eventDate}
-            placeholder={t.form.eventDatePlaceholder}
             onChange={(event) => updateField("eventDate", event.target.value)}
             aria-invalid={Boolean(errors.eventDate)}
           />

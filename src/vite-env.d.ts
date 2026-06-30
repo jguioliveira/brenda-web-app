@@ -2,7 +2,7 @@
 
 declare module "@glidejs/glide" {
   export default class Glide {
-    constructor(selector: string, options?: Record<string, unknown>);
+    constructor(selector: string | HTMLElement, options?: Record<string, unknown>);
     mount(): this;
     destroy(): void;
   }

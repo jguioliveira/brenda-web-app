@@ -90,6 +90,9 @@ export const es: Translations = {
     title: "Trabajos Recientes",
     intro: "Una muestra de artistry nupcial, rizos y eventos en Gold Coast y Brisbane.",
     viewMore: "Ver más en Instagram",
+    prevSlide: "Foto anterior",
+    nextSlide: "Foto siguiente",
+    defaultImageAlt: "Trabajos recientes de cabello y maquillaje por Brenda Mello",
     imageAlts: {
       bridal: "Hair y makeup nupcial",
       curls: "Styling y corte de rizos naturales",
@@ -105,20 +108,8 @@ export const es: Translations = {
     title: "Palabras Amables & Reseñas",
     ratingLabel: "5 de 5 estrellas",
     reviewsLink: "Leer más reseñas en Google",
-    items: [
-      {
-        quote:
-          "¡Un sueño trabajar con ella! Hizo mi makeup nupcial y duró lágrimas, humedad y baile. Su enfoque holístico dejó mi piel impecable. ¡Recomiendo mucho su servicio móvil en Gold Coast!",
-        author: "Sarah Jenkins",
-        sub: "Cliente Nupcial • Gold Coast",
-      },
-      {
-        quote:
-          "¡Por fin encontré a alguien en Australia que entiende de rizos! El corte en seco cambió mi cabello. Analiza nuestra rutina y da consejos reales de cuidado en casa. ¡Perfecta!",
-        author: "Mariana Silva",
-        sub: "Clínica de Rizos • Brisbane",
-      },
-    ],
+    readMore: "Leer más",
+    readLess: "Leer menos",
   },
   contact: {
     tag: "Reserva del Atelier",
