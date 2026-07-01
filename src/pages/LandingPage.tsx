@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import { PortfolioCarousel } from "@/components/PortfolioCarousel";
 import { ContactSection } from "@/components/ContactSection";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -32,7 +33,7 @@ export function LandingPage() {
         <section className="hero">
           <div className="hero-inner">
             <div className="hero-media">
-              <img src={SITE.heroImage} alt={t.hero.imageAlt} loading="eager" />
+              <OptimizedImage src={SITE.heroImage} alt={t.hero.imageAlt} loading="eager" />
             </div>
             <div className="hero-copy">
               <span className="hero-tag">{t.hero.tag}</span>
@@ -65,7 +66,7 @@ export function LandingPage() {
               </a>
             </div>
             <div className="image-box">
-              <img src={SITE.bridalImage} alt={t.bridal.imageAlt} loading="lazy" />
+              <OptimizedImage src={SITE.bridalImage} alt={t.bridal.imageAlt} loading="lazy" />
             </div>
           </div>
         </section>
@@ -85,7 +86,7 @@ export function LandingPage() {
               </a>
             </div>
             <div className="image-box image-box-light">
-              <img src={SITE.curlsImage} alt={t.curls.imageAlt} loading="lazy" />
+              <OptimizedImage src={SITE.curlsImage} alt={t.curls.imageAlt} loading="lazy" />
             </div>
           </div>
         </section>
@@ -105,7 +106,7 @@ export function LandingPage() {
               </a>
             </div>
             <div className="image-box">
-              <img src={SITE.eventsImage} alt={t.events.imageAlt} loading="lazy" />
+              <OptimizedImage src={SITE.eventsImage} alt={t.events.imageAlt} loading="lazy" />
             </div>
           </div>
         </section>
@@ -146,7 +147,7 @@ export function LandingPage() {
         <section id="about" className="section-padding about-section">
           <div className="split-container">
             <div className="image-box image-box-accent">
-              <img src={SITE.aboutImage} alt={t.about.imageAlt} loading="lazy" />
+              <OptimizedImage src={SITE.aboutImage} alt={t.about.imageAlt} loading="lazy" />
             </div>
             <div className="content-box about-text">
               <span className="hero-tag">{t.about.tag}</span>
@@ -172,7 +173,7 @@ export function LandingPage() {
                   rel="noopener noreferrer"
                   className="instagram-preview-item"
                 >
-                  <img src={src} alt="" loading="lazy" />
+                  <OptimizedImage src={src} alt="" loading="lazy" />
                 </a>
               ))}
             </div>

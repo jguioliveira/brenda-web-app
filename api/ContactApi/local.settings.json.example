@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "SMTP_HOST": "smtp.gmail.com",
+    "SMTP_PORT": "587",
+    "SMTP_USER": "contact@brendamello.com",
+    "SMTP_PASSWORD": "your-google-app-password",
+    "BUSINESS_EMAIL": "contact@brendamello.com",
+    "FROM_NAME": "Brenda Mello Beauty",
+    "ALLOWED_ORIGINS": "http://localhost:5173,https://brendamello.com,https://www.brendamello.com"
+  }
+}

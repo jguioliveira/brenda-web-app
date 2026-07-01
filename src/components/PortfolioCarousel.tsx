@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import Glide from "@glidejs/glide";
 import "@glidejs/glide/dist/css/glide.core.min.css";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import { PORTFOLIO } from "@/data/portfolio";
 import { SITE } from "@/data/site";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -45,7 +46,7 @@ export function PortfolioCarousel() {
                   rel="noopener noreferrer"
                   className="portfolio-item"
                 >
-                  <img
+                  <OptimizedImage
                     src={item.src}
                     alt={
                       item.service

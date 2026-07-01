@@ -74,6 +74,7 @@ Rebuild; internal asset paths will use that prefix.
 - [ ] Confirm **images** under `public/assets/` are committed (paths like `/assets/img/...`).
 - [ ] Set your **production domain** in the host’s dashboard and enable **HTTPS**.
 - [ ] Update **contact** details (email, phone, social) in the source if needed.
+- [ ] Deploy the **contact form API** (`api/`) to Azure Functions and set `VITE_CONTACT_API_URL` for production builds (see `api/README.md`).
 - [ ] Optional: **analytics** (e.g. Plausible, GA) via `index.html` or a small React snippet.
 
 ## Scripts

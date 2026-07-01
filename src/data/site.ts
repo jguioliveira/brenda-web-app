@@ -10,6 +10,7 @@ export const SITE = {
   googleReviewsUrl: "https://share.google/b5WRO5uPi4RBZ3acH",
   siteUrl: import.meta.env.VITE_SITE_URL ?? "https://brendamello.com",
   formspreeFormId: import.meta.env.VITE_FORMSPREE_FORM_ID ?? "",
+  contactApiUrl: import.meta.env.VITE_CONTACT_API_URL ?? "",
   logoImage: "/assets/img/bm-logo.png",
   logoAlt: "Brenda Mello Beauty",
   heroImage: "/assets/img/IMG_4539.JPG",

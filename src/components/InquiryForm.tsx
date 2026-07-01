@@ -49,6 +49,7 @@ async function sendInquiry(
   values: FormState,
   serviceLabel: string,
   dateLocale: string,
+  language: Language,
 ): Promise<boolean> {
   const eventDate = formatEventDate(values.eventDate.trim(), dateLocale);
   const payload = {
@@ -58,8 +59,19 @@ async function sendInquiry(
     eventDate,
     eventLocation: values.eventLocation.trim(),
     message: values.message.trim(),
-    _subject: `Enquiry: ${serviceLabel}`,
+    language,
   };
+
+  if (SITE.contactApiUrl) {
+    const response = await fetch(`${SITE.contactApiUrl.replace(/\/$/, "")}/api/contact`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+    return response.ok;
+  }
 
   if (SITE.formspreeFormId) {
     const response = await fetch(`https://formspree.io/f/${SITE.formspreeFormId}`, {
@@ -68,12 +80,15 @@ async function sendInquiry(
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({
+        ...payload,
+        _subject: `Enquiry: ${serviceLabel}`,
+      }),
     });
     return response.ok;
   }
 
-  const subject = encodeURIComponent(payload._subject);
+  const subject = encodeURIComponent(`Enquiry: ${serviceLabel}`);
   const body = encodeURIComponent(
     [
       `Name: ${payload.name}`,
@@ -137,7 +152,7 @@ export function InquiryForm() {
     setSubmitError(false);
 
     try {
-      const ok = await sendInquiry(values, t.form.services[values.service], dateInputLocale);
+      const ok = await sendInquiry(values, t.form.services[values.service], dateInputLocale, language);
       if (ok) {
         setSubmitted(true);
       } else {

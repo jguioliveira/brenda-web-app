@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import type { Testimonial } from "@/data/testimonials";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { truncateWords } from "@/utils/truncateWords";
@@ -21,7 +22,7 @@ export function TestimonialCard({ item }: TestimonialCardProps) {
       <div className="testimonial-header">
         {item.photoUrl ? (
           <div className="testimonial-photo-frame">
-            <img src={item.photoUrl} alt="" className="testimonial-photo" loading="lazy" />
+            <OptimizedImage src={item.photoUrl} alt="" className="testimonial-photo" loading="lazy" />
           </div>
         ) : null}
         <div className="testimonial-meta">

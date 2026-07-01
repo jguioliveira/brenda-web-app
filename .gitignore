@@ -11,6 +11,7 @@ node_modules/
 dist/
 dist-ssr/
 *.local
+public/assets/img/_originals/
 
 # Logs
 logs/
@@ -37,3 +38,10 @@ lerna-debug.log*
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Azure Functions
+api/ContactApi/local.settings.json
+api/ContactApi/bin/
+api/ContactApi/obj/
+api/**/local.settings.json
+!api/ContactApi/local.settings.json.example
